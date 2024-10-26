@@ -258,10 +258,9 @@ const Home = () => {
       <div className="video">
         <video
           src="../../Screens/mixkit-white-luxury-boutique-hotel-room-4046-hd-ready.mp4"
-          autoPlay
+          autoPlay={true}
           loop
-          mute
-          controls
+          controls={false}
         ></video>
       </div>
       <div className="float">

@@ -142,7 +142,7 @@ const Navbar = () => {
       try {
         // const URL = process.env.REACT_APP_EC2_PUBLIC_IP;
 
-        const response = await fetch(`${baseURL}/products`);
+        const response = await fetch(`${baseURL}:3000/products`);
         const data = await response.json();
         setProducts(data); // Store products in state
         setFilteredProducts(data); // Initially set all products as filtered products

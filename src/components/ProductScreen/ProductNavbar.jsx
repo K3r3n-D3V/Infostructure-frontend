@@ -15,6 +15,9 @@ const ProductNavbar = () => {
   console.log("cart count from context", cartCount);
 
   useEffect(() => {
+    var cartItems = JSON.parse(sessionStorage.getItem("CartItems")) ?? [];
+    setCartCount(cartItems?.length);
+
     const fetchProducts = async () => {
       try {
         const response = await fetch(`${baseURL}:3000/products`);
@@ -31,9 +34,6 @@ const ProductNavbar = () => {
   //change made to getCartCount()
   const getCartCount = () => {
     var cartItems = JSON.parse(sessionStorage.getItem("CartItems")) ?? [];
-
-    setCartCount(cartItems?.length);
-
     return cartCount;
   };
 

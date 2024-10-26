@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useContext } from "react";
+// import { InfostructureContext } from "../../context/context";
 import { InfostructureContext } from "../../context/context";
 import { useNavigate } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa";
@@ -7,12 +8,11 @@ import "./ProductScreen.css";
 
 const baseURL = import.meta.env.VITE_EC2_PUBLIC_URL;
 
-
 const ProductScreen = () => {
   const navigate = useNavigate();
 
   const [products, setProducts] = useState([]);
-  const { cartCount, setCartCount } = useContext(InfostructureContext);
+  const {setCartCount , cartCount} = useContext(InfostructureContext);
 
   useEffect(() => {
     fetch(`${baseURL}:3000/products`)
@@ -55,8 +55,8 @@ const ProductScreen = () => {
         <div className="product-list">
           <div className="product">
             {products.length > 0 ? (
-              products.map((product) => (
-                <div key={product._id} className="image-item">
+              products.map((product,index) => (
+                <div key={product._id + index} className="image-item">
                   <img src={product.Image} alt={product.ProductName} />
                   <div className="product-info">
                     <p className="product-name">{product.ProductName}</p>
