@@ -30,7 +30,7 @@ function Login({ setSignedIn }) {
     //console.log(inputValues); // This will log the state before the update is applied
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e) => { 
     e.preventDefault();
 
     console.log("data", inputValues);
