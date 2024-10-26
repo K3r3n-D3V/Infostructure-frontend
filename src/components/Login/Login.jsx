@@ -4,6 +4,8 @@ import { InfostructureContext } from "../../context/context";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
+const baseURL = import.meta.env.VITE_EC2_PUBLIC_URL;
+
 function Login({ setSignedIn }) {
   const navigate = useNavigate();
   const { AuthenticatedStatus } = useContext(InfostructureContext);
@@ -34,7 +36,7 @@ function Login({ setSignedIn }) {
     console.log("data", inputValues);
 
     axios
-      .post("http://localhost:3000/login", {
+      .post(`${baseURL}:3000/login`, {
         email: inputValues.email,
         password: inputValues.password,
       })

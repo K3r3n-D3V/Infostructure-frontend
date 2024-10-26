@@ -8,6 +8,9 @@ import {
 import axios from "axios";
 import "./BankDetails.css";
 
+const baseURL = import.meta.env.VITE_EC2_PUBLIC_URL;
+
+
 const BankDetails = () => {
   const [bankDetails, setBankDetails] = useState({});
   const [loading, setLoading] = useState(true);
@@ -18,7 +21,7 @@ const BankDetails = () => {
   useEffect(() => {
     const fetchBankDetails = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/bankdetails");
+        const response = await axios.get(`${baseURL}:3000/bankdetails`);
         setBankDetails(response.data);
         setBalance(response.data.balance || "0.00");
         setTransactions(response.data.transactions || []);

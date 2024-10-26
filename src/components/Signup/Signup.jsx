@@ -4,6 +4,9 @@ import "./Signup.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
+const baseURL = import.meta.env.VITE_EC2_PUBLIC_URL;
+
+
 function Signup({ setSignedIn }) {
   const navigate = useNavigate();
   const handleLogInClick = () => {
@@ -31,7 +34,7 @@ function Signup({ setSignedIn }) {
     console.log("data", inputValues);
     // everytime we sign in we set signeIn to true and then we go home
     axios
-      .post("http://localhost:3000/users", inputValues)
+      .post(`${baseURL}:3000/users`, inputValues)
       .then((result) => {
         console.log(result);
         setSignedIn(true);

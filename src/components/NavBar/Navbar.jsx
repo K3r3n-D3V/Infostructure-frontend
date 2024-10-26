@@ -124,6 +124,8 @@ import { FaUser, FaShoppingCart, FaSearch, FaHome } from "react-icons/fa";
 import "./Navbar.css";
 import { useNavigate } from "react-router-dom";
 
+const baseURL = import.meta.env.VITE_EC2_PUBLIC_URL;
+
 const Navbar = () => {
   const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState(""); // State for search input
@@ -132,9 +134,15 @@ const Navbar = () => {
 
   // Fetch products from the backend
   useEffect(() => {
+
+
+    console.log(baseURL,"URL From env")
+
     const fetchProducts = async () => {
       try {
-        const response = await fetch("http://localhost:3000/products");
+        // const URL = process.env.REACT_APP_EC2_PUBLIC_IP;
+
+        const response = await fetch(`${baseURL}:3000/products`);
         const data = await response.json();
         setProducts(data); // Store products in state
         setFilteredProducts(data); // Initially set all products as filtered products

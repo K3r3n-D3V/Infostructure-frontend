@@ -33,6 +33,7 @@
    /* border: 1px solid #fff; */
    border: none;
    border-radius: 4px;
+   color: #fff;
  }
 
  .signup-box input:hover {

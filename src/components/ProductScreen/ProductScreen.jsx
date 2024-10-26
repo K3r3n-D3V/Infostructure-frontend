@@ -5,6 +5,9 @@ import { FaArrowLeft } from "react-icons/fa";
 import ProductNavbar from "./ProductNavbar";
 import "./ProductScreen.css";
 
+const baseURL = import.meta.env.VITE_EC2_PUBLIC_URL;
+
+
 const ProductScreen = () => {
   const navigate = useNavigate();
 
@@ -12,7 +15,7 @@ const ProductScreen = () => {
   const { cartCount, setCartCount } = useContext(InfostructureContext);
 
   useEffect(() => {
-    fetch("http://localhost:3000/products")
+    fetch(`${baseURL}:3000/products`)
       .then((response) => response.json())
       .then((data) => {
         console.log("data", data);

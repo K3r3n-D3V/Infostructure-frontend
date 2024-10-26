@@ -4,6 +4,8 @@ import { FaUser, FaShoppingCart, FaSearch } from "react-icons/fa";
 import "./Locations.css";
 import LocationNavbar from "./LocationNavbar";
 
+const baseURL = import.meta.env.VITE_EC2_PUBLIC_URL;
+
 const Locations = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [locations, setLocations] = useState([]);
@@ -12,7 +14,7 @@ const Locations = () => {
   useEffect(() => {
     const fetchLocations = async () => {
       try {
-        const response = await fetch("http://localhost:3000/locations");
+        const response = await fetch(`${baseURL}:3000/locations`);
         const data = await response.json();
         console.log(data);
         setLocations(data);

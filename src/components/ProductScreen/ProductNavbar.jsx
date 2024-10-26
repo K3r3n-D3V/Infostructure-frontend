@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import { FaUser, FaShoppingCart, FaSearch, FaHome } from "react-icons/fa";
 import "./ProductNavbar.css";
 
+const baseURL = import.meta.env.VITE_EC2_PUBLIC_URL;
+
 const ProductNavbar = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [products, setProducts] = useState([]);
@@ -15,7 +17,7 @@ const ProductNavbar = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch("http://localhost:3000/products");
+        const response = await fetch(`${baseURL}:3000/products`);
         const data = await response.json();
         setProducts(data);
         setFilteredProducts(data);

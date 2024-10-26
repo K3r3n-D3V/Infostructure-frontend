@@ -3,6 +3,8 @@ import "./CheckOut.css";
 import Navbar from "../NavBar/Navbar";
 import { Link } from "react-router-dom";
 
+const baseURL = import.meta.env.VITE_EC2_PUBLIC_URL;
+
 function CheckOut() {
   const [items, setItems] = useState([]);
   const [formData, setFormData] = useState({
@@ -102,7 +104,7 @@ function CheckOut() {
   };
 
   const sendPaymentDetailsToServer = async (paymentDetails) => {
-    return await fetch("http://localhost:3000/payment-history", {
+    return await fetch(`${baseURL}:3000/payment-history`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
