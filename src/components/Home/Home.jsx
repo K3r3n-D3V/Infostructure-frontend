@@ -28,7 +28,9 @@ const Home = () => {
             A warm, welcoming sanctuary filled with personal touches and
             peaceful comfort
           </p>
-          <button onClick={productscreen}>SHOP COLLECTION</button>
+          <Link to="/productscreen">
+          <button type="button">SHOP COLLECTION</button>
+          </Link>
         </div>
         <div className="box2">
           <img src="../../Screens/home-pic1.jpg" alt="" className="zoom" />
