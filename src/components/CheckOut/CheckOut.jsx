@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./CheckOut.css";
 import Navbar from "../NavBar/Navbar";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const baseURL = import.meta.env.VITE_EC2_PUBLIC_URL;
 

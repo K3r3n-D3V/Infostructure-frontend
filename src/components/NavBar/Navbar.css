@@ -42,7 +42,7 @@
     }
 
     .icon:hover {
-      color: #ccc;
+      color: #066c74;
     }
 
     .navbar-search {
@@ -124,3 +124,17 @@
       font-weight: 600;
       text-decoration: none;
     } */
+
+    .navbar-btn{
+      padding: 5px;
+      transition: 0.5s;
+    }
+
+  .navbar-btn:hover{
+  background-color: #066c74;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 10px;
+  border: none;
+
+}

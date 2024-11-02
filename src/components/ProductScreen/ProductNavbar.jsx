@@ -110,6 +110,9 @@ const ProductNavbar = () => {
             <FaShoppingCart className="product-navbar-icon" />
             <div className="cart-tag">{getCartCount()}</div>
           </Link>
+          <Link to="/login">
+        <button className="navbar-btn">Login</button>
+        </Link>
         </div>
       </nav>
     </div>
