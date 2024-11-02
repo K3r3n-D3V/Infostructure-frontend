@@ -6,8 +6,18 @@ import { useNavigate } from "react-router-dom";
 
 const baseURL = import.meta.env.VITE_EC2_PUBLIC_URL;
 
-const Navbar = () => {
+const Navbar = ({isAuthenticated}) => {
   const navigate = useNavigate();
+
+  const handleProceedToCart = () => {
+    if (isAuthenticated) {
+      // Redirect to the checkout page
+      navigate('/checkout');
+    } else {
+      // Redirect to the login page if the user is not logged in
+      navigate('/login');
+    }
+  };  
   const [searchTerm, setSearchTerm] = useState(""); // State for search input
   const [products, setProducts] = useState([]); // State to store products fetched from MongoDB
   const [filteredProducts, setFilteredProducts] = useState([]); // State for filtered products
@@ -119,9 +129,9 @@ const Navbar = () => {
         <Link to="/profile">
           <FaUser className="icon" />
         </Link>
-        <Link to="/cart">
-          <FaShoppingCart className="icon" />
-        </Link>
+        {/* <Link to="/cart"> */}
+          <FaShoppingCart className="icon" onClick={handleProceedToCart}/>
+        {/* </Link> */}
         <Link to="/login">
         <button className="navbar-btn">Login</button>
         </Link>

@@ -2,21 +2,10 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "../NavBar/Navbar";
 import "./Cart.css";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
-const Cart = ({signedIn}) => {
+const Cart = () => {
 
-  const navigate = useNavigate();
-
-  const handleProceedToCheckout = () => {
-    if (signedIn) {
-      // Redirect to the checkout page
-      navigate('/checkout');
-    } else {
-      // Redirect to the login page if the user is not logged in
-      navigate('/login');
-    }
-  };
   const [items, setItems] = useState([]);
   const [shippingCost, setShippingCost] = useState(10); // Default shipping cost
 
@@ -162,9 +151,9 @@ const Cart = ({signedIn}) => {
             <p>${totalAmountWithShipping.toFixed(2)}</p>
           </div>
           <div className="checkout-btn">
-            {/* <Link to="/checkout"> */}
-              <button onClick={handleProceedToCheckout}>Proceed to Checkout</button>
-            {/* </Link> */}
+            <Link to="/checkout">
+              <button>Proceed to Checkout</button>
+            </Link>
           </div>
         </div>
       </div>
