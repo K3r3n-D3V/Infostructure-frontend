@@ -59,8 +59,8 @@ const ProductScreen = () => {
                 <div key={product._id + index} className="image-item">
                   <img src={product.Image} alt={product.ProductName} />
                   <div className="product-info">
-                    <p className="product-name">{product.ProductName}</p>
-                    <h3>Description</h3>
+                    <h3 className="product-name">{product.ProductName}</h3>
+                    <p>Description</p>
                     <p className="product-description">{product.Description}</p>
                     <p className="product-price">${product.Price}</p>
                     <button

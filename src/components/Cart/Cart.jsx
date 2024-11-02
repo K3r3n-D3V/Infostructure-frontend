@@ -4,12 +4,12 @@ import Navbar from "../NavBar/Navbar";
 import "./Cart.css";
 import { useNavigate } from "react-router-dom";
 
-const Cart = ({isAuthenticated}) => {
+const Cart = ({signedIn}) => {
 
   const navigate = useNavigate();
 
   const handleProceedToCheckout = () => {
-    if (isAuthenticated) {
+    if (signedIn) {
       // Redirect to the checkout page
       navigate('/checkout');
     } else {

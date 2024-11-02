@@ -58,6 +58,10 @@ const Navbar = () => {
     navigate("/");
   };
 
+  const productscreen = () => {
+    navigate("/productscreen")
+  }
+
   return (
     <nav className="navbar">
       <div className="navbar-logo">
@@ -87,7 +91,8 @@ const Navbar = () => {
               <li
                 key={product._id}
                 className="search-item"
-                onClick={() => navigate(`/product/${product._id}`)} // Navigate to ProductScreen
+                // onClick={() => navigate(`/productscreen/${product._id}`)}
+                onClick={productscreen}
               >
                 <img
                   src={product.Image}
@@ -102,7 +107,7 @@ const Navbar = () => {
               </li>
             ))
           ) : (
-            <li>No matching products found</li>
+            <h5>No matching products found</h5>
           )}
         </ul>
       )}

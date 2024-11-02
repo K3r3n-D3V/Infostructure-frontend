@@ -106,8 +106,8 @@ p {
 }
 
 .addToCartBtn button:hover {
-  background-color: #fff;
-  color: #000;
+  background-color: #000;
+  color: #fff;
 }
 
 .arrow-icon {

@@ -7,7 +7,15 @@
       justify-content: space-between;
       align-items: center;
       background-color: #fff;
+      width: 100%;
       padding: 10px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000000;
+      transition: box-shadow 0.3s ease; 
+    }
+    .navbar.shadow {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7); 
     }
 
     .navbar-logo img {
@@ -97,8 +105,9 @@
     }
 
     .search-item:hover {
-      background-color: #ccc;
+      background-color: rgba(6, 108, 116, 0.5);
       cursor: pointer;
+      color: #fff;
     }
 
     .product-info {

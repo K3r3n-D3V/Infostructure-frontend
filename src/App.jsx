@@ -40,13 +40,16 @@ function App() {
         <Route path="/" element={<Home />} />
 
         <Route path="/profile" element={<Profile signedIn={signedIn} />} />
-        {/* Protected routes */}
-        <Route element={<ProtectedRoutes signedIn={signedIn} />}></Route>
         <Route path="/cart" element={<Cart />} />
+
+        {/* Protected routes */}
+        <Route element={<ProtectedRoutes signedIn={signedIn} />}>
         <Route
           path="/checkout"
-          element={<CheckOut setSignedIn={setSignedIn} />}
+          element={<CheckOut element={<Cart setSignedIn={setSignedIn}/>} />}
         />
+        </Route>
+       
         <Route
           path="/bankdetails"
           element={<BankDetails setSignedIn={setSignedIn} />}
