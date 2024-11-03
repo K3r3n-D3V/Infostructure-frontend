@@ -46,12 +46,16 @@ function Login({ setSignedIn }) {
           setSignedIn(true);
           AuthenticatedStatus(true);
           navigate("/cart");
+          alert(`Welcome!!! ${name}`)
         }
       })
       .catch((error) => {
         console.error("There was an error logging in:", error);
       });
   };
+
+ 
+
   return (
     <div className="login-container">
       <div className="login-box">

@@ -37,6 +37,7 @@ function Signup({ setSignedIn }) {
       .post(`${baseURL}:3000/users`, inputValues)
       .then((result) => {
         console.log(result);
+        alert("Hey there frst timer!!!")
         setSignedIn(true);
         navigate("/");
       })
