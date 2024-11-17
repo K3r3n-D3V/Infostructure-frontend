@@ -228,8 +228,9 @@
   }
 
   .checkout-btn button:hover {
-    background-color: rgba(6, 108, 116, 0.3);
+    background-color: #066c74;
     cursor: pointer;
+    color: #fff;
   }
 
   .return {
@@ -243,4 +244,12 @@
     width: 20%;
     background-color: rgba(6, 108, 116, 0.5);
     border-radius: 10px;
+    color: #000;
+    border: none;
+    margin: 10px 0;
+  }
+
+  .return button:hover{
+    background-color: #066c74;
+    color: #fff;
   }

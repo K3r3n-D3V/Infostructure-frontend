@@ -244,7 +244,7 @@ const ProductNavbar = ({ signedIn, setSignedIn }) => {
         <Link to="/profile">
           <FaUser className="product-navbar-icon" />
         </Link>
-        <Link to="/cart">
+        <Link to="/cart" id="product-cart-icon">
           <FaShoppingCart className="product-navbar-icon" />
           <div className="cart-tag">{cartCount}</div>
         </Link>

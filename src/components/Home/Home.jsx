@@ -29,7 +29,7 @@ const Home = () => {
             peaceful comfort
           </p>
           <Link to="/productscreen">
-          <button type="button">SHOP COLLECTION</button>
+          <button type="button" className="shop-collection">SHOP COLLECTION</button>
           </Link>
         </div>
         <div className="box2">

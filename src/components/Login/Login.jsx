@@ -58,7 +58,7 @@ function Login({ setSignedIn }) {
 
   return (
     <div className="login-container">
-      <div className="login-box">
+      <div className="login-box" data-test="email">
         <h2>Login</h2>
         <hr />
         <form onSubmit={handleSubmit}>

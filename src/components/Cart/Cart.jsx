@@ -97,11 +97,11 @@ const Cart = () => {
                 <p>{product.ProductName}</p>
                 <p>{product.ProductBrand}</p>
                 <div className="counter">
-                  <button onClick={() => handleDecreaseQuantity(index)}>
+                  <button className="decrease" onClick={() => handleDecreaseQuantity(index)}>
                     -
                   </button>
                   <h6>{Number(product.quantity) || 1}</h6>
-                  <button onClick={() => handleIncreaseQuantity(index)}>
+                  <button className="increase" onClick={() => handleIncreaseQuantity(index)}>
                     +
                   </button>
                 </div>
@@ -136,7 +136,7 @@ const Cart = () => {
           <div className="shipping-info">
             <h4>SHIPPING</h4>
             <form>
-              <select onChange={handleShippingChange}>
+              <select name="deliveryMethod" onChange={handleShippingChange}>
                 <option value="Standard Delivery">
                   Standard Delivery - $10
                 </option>

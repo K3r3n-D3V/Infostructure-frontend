@@ -257,7 +257,7 @@ const Navbar = ({ signedIn, setSignedIn }) => {
         <Link to="/profile">
           <FaUser className="icon" />
         </Link>
-        <FaShoppingCart className="icon" onClick={handleProceedToCart} />
+        <i className="cart-icon"><FaShoppingCart className="icon" onClick={handleProceedToCart} /></i>
         
         {signedIn ? (
           <>
@@ -265,9 +265,9 @@ const Navbar = ({ signedIn, setSignedIn }) => {
           </>
         ) : (
           <>
-            <Link to="/signup">
+            {/* <Link to="/signup">
               <button className="navbar-btn">Sign Up</button>
-            </Link>
+            </Link> */}
             <Link to="/login">
               <button className="navbar-btn">Login</button>
             </Link>
