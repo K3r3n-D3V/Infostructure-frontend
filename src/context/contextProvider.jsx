@@ -5,7 +5,7 @@ const ContextProvider = ({ children }) => {
   const [cartCount, setCartCount] = useState(0);
   const [isLogged, setLoggedIn] = useState(false);
   const [user, setUser] = useState(null); // Initialize user as null if it holds user data
-  const [savedSettings, setSavedSettings] = useState({theme:"",showPricing:""});
+  const [savedSettings, setSavedSettings] = useState({theme:"Light",showPricing:""});
 
 
   const contextValues = {
