@@ -136,7 +136,7 @@
     border-radius: 10px;
 }
 
-
+/* 
 .float {
     border: 1px solid #000;
     height: 330px;
@@ -159,7 +159,7 @@
     width: 100%;
     border: 5px;
     object-fit: contain;
-}
+} */
 
 .float img:hover {
     background-color:rgba(6, 108, 116, 0.5);
@@ -381,4 +381,61 @@ svg {
     justify-content: start;
     margin-top: 130px;
     color: #fff;
+}
+
+
+.cart-tag {
+    /* border: 1px solid #000; */
+    border-radius: 100%;
+    background-color: #f00;
+    padding: 2px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25px;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+
+
+
+
+
+
+
+#app { height: 100% }
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+
+body {
+  background: #eee;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+
+.swiper {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  height: 300px;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
 }

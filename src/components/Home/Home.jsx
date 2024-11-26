@@ -1,5 +1,6 @@
-import React from "react";
+import React, {useState, useEffect,useContext, } from "react";
 import Navbar from "../NavBar/Navbar";
+import { InfostructureContext } from "../../context/context";
 import {
   FaEnvelope,
   FaMapMarkerAlt,
@@ -9,27 +10,62 @@ import {
 } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/effect-coverflow';
+import 'swiper/css/pagination';
+import { Autoplay } from "swiper/modules";
+
+
+
+// import required modules
+import { EffectCoverflow, Pagination } from 'swiper/modules';
+
 import "./Home.css";
 
 const Home = () => {
+  const [isLightMode, setIsLightMode] = useState(true); // State to toggle themes
+  const {savedSettings,setSavedSettings} = useContext(InfostructureContext)
+
+
+  // Toggle Theme
+  const toggleTheme = () => {
+    setIsLightMode(!isLightMode);
+    document.body.classList.toggle("light-theme", isLightMode); // Toggle class for light theme
+    document.body.classList.toggle("dark-theme", !isLightMode); // Toggle class for dark theme
+  };
+
+
   const navigate = useNavigate();
   const productscreen = () => {
     navigate("/productscreen");
   };
+
+  const themeStyles = {
+    input: {
+      color: savedSettings.theme === "Dark" ? "#fff" : "#000", // Input text color
+    },
+    placeholder: {
+      color: savedSettings.theme === "Dark" ? "#fff" : "#777", // Placeholder color
+    },
+  };
   return (
-    <div className="home">
+    <div className="home" style={{backgroundColor:savedSettings.theme == "Dark" ? "#000":"#fff", color:savedSettings.theme == "Dark" ? "#fff":"#000"}}>
       <Navbar />
-      <div className="box">
-        <div className="box2">
-          <h1>
+      <div className="box" style={{backgroundColor:savedSettings.theme == "Dark" ? "#000":"#fff", color:savedSettings.theme == "Dark" ? "#fff":"#000"}}>
+        <div className="box2" style={{backgroundColor:savedSettings.theme == "Dark" ? "#000":"#fff", color:savedSettings.theme == "Dark" ? "#fff":"#000"}}>
+          <h1 style={{backgroundColor:savedSettings.theme == "Dark" ? "#000":"#fff", color:savedSettings.theme == "Dark" ? "#fff":"#000"}}>
             Home sweet <span className="span">stylish</span> home.
           </h1>
-          <p className="designers">
+          <p className="designers" style={{backgroundColor:savedSettings.theme == "Dark" ? "#000":"#fff", color:savedSettings.theme == "Dark" ? "#fff":"#000"}}>
             A warm, welcoming sanctuary filled with personal touches and
             peaceful comfort
           </p>
           <Link to="/productscreen">
-          <button type="button" className="shop-collection">SHOP COLLECTION</button>
+          <button type="button" className="shop-collection" style={{backgroundColor:savedSettings.theme == "Dark" ? "#fff":"#000", color:savedSettings.theme == "Dark" ? "#000":"#fff"}}>SHOP COLLECTION</button>
           </Link>
         </div>
         <div className="box2">
@@ -38,8 +74,8 @@ const Home = () => {
       </div>
 
       <div className="box3 designers">
-        <h1>Explore our Curated Collections By Designers...</h1>
-        <div className="collection">
+        <h1 style={{color:savedSettings.theme == "Dark" ? "#fff":"#000"}}>Explore our Curated Collections By Designers...</h1>
+        <div className="collection" >
           <div className="collection-item">
             <div className="collection-pic">
               <img
@@ -47,8 +83,8 @@ const Home = () => {
                 alt=""
                 onClick={productscreen}
               />
-              <div className="collection-info designer">
-                <h1>Sophia LeLor</h1>
+              <div className="collection-info designer" >
+                <h1 style={{backgroundColor:savedSettings.theme == "Dark" ? "#000":"#fff", color:savedSettings.theme == "Dark" ? "#fff":"#000"}}>Sophia LeLor</h1>
               </div>
             </div>
           </div>
@@ -60,7 +96,7 @@ const Home = () => {
                 onClick={productscreen}
               />
               <div className="collection-info designer">
-                <h1>Marinette Dupeng-Cheng</h1>
+                <h1 style={{backgroundColor:savedSettings.theme == "Dark" ? "#000":"#fff", color:savedSettings.theme == "Dark" ? "#fff":"#000"}}>Marinette Dupeng-Cheng</h1>
               </div>
             </div>
           </div>
@@ -72,7 +108,7 @@ const Home = () => {
                 onClick={productscreen}
               />
               <div className="collection-info designer">
-                <h1>Agnes Levine</h1>
+                <h1 style={{backgroundColor:savedSettings.theme == "Dark" ? "#000":"#fff", color:savedSettings.theme == "Dark" ? "#fff":"#000"}}>Agnes Levine</h1>
                 {/* <p>Eye-catching accents to complete your look</p> */}
               </div>
             </div>
@@ -85,7 +121,7 @@ const Home = () => {
                 onClick={productscreen}
               />
               <div className="collection-info designer">
-                <h1>Patrick Dior</h1>
+                <h1 style={{color:savedSettings.theme == "Dark" ? "#fff":"#000"}}>Patrick Dior</h1>
                 {/* <p>Dreamy furniture fit for royalty</p> */}
               </div>
             </div>
@@ -100,7 +136,7 @@ const Home = () => {
                 onClick={productscreen}
               />
               <div className="collection-info designer">
-                <h1>Annabelle Ford</h1>
+                <h1 style={{color:savedSettings.theme == "Dark" ? "#fff":"#000"}}>Annabelle Ford</h1>
               </div>
             </div>
           </div>
@@ -112,7 +148,7 @@ const Home = () => {
                 onClick={productscreen}
               />
               <div className="collection-info designer">
-                <h1>Lucrazia Santos</h1>
+                <h1 style={{color:savedSettings.theme == "Dark" ? "#fff":"#000"}}>Lucrazia Santos</h1>
                 {/* <p>Bathtubs, sinks and more to create a unique oasis of refreshment</p> */}
               </div>
             </div>
@@ -121,7 +157,7 @@ const Home = () => {
             <div className="collection-pic">
               <img src="../../Screens/pic7.jpg" alt="" />
               <div className="collection-info designer">
-                <h1>Boketsu Peace</h1>
+                <h1 style={{color:savedSettings.theme == "Dark" ? "#fff":"#000"}}>Boketsu Peace</h1>
                 {/* <p>Warm, inviting, culinary hub of creativity</p> */}
               </div>
             </div>
@@ -134,7 +170,7 @@ const Home = () => {
                 onClick={productscreen}
               />
               <div className="collection-info designer">
-                <h1>Emma Bulore</h1>
+                <h1 style={{color:savedSettings.theme == "Dark" ? "#fff":"#000"}}>Emma Bulore</h1>
                 {/* <p>kjgvkyh</p> */}
               </div>
             </div>
@@ -142,7 +178,7 @@ const Home = () => {
         </div>
       </div>
       <div className="box3">
-        <h1>Shop By Categories</h1>
+        <h1 style={{color:savedSettings.theme == "Dark" ? "#fff":"#000"}}>Shop By Categories</h1>
         <div className="collection">
           <div className="collection-item">
             <div className="collection-pic">
@@ -152,8 +188,8 @@ const Home = () => {
                 onClick={productscreen}
               />
               <div className="collection-info">
-                <h1>Living Room</h1>
-                <p>Sophisticated sofas, rugs and more</p>
+                <h1 style={{color:savedSettings.theme == "Dark" ? "#fff":"#000"}}>Living Room</h1>
+                <p style={{color:savedSettings.theme == "Dark" ? "#fff":"#000"}}>Sophisticated sofas, rugs and more</p>
               </div>
             </div>
           </div>
@@ -165,8 +201,8 @@ const Home = () => {
                 onClick={productscreen}
               />
               <div className="collection-info">
-                <h1>Dining Room</h1>
-                <p>Tables, Chairs and more to help you set a city-chic scene</p>
+                <h1 style={{color:savedSettings.theme == "Dark" ? "#fff":"#000"}}>Dining Room</h1>
+                <p style={{color:savedSettings.theme == "Dark" ? "#fff":"#000"}}>Tables, Chairs and more to help you set a city-chic scene</p>
               </div>
             </div>
           </div>
@@ -178,8 +214,8 @@ const Home = () => {
                 onClick={productscreen}
               />
               <div className="collection-info">
-                <h1>Decor & more</h1>
-                <p>Eye-catching accents to complete your look</p>
+                <h1 style={{color:savedSettings.theme == "Dark" ? "#fff":"#000"}}>Decor & more</h1>
+                <p style={{color:savedSettings.theme == "Dark" ? "#fff":"#000"}}>Eye-catching accents to complete your look</p>
               </div>
             </div>
           </div>
@@ -191,8 +227,8 @@ const Home = () => {
                 onClick={productscreen}
               />
               <div className="collection-info">
-                <h1>Bedroom</h1>
-                <p>Dreamy furniture fit for royalty</p>
+                <h1 style={{color:savedSettings.theme == "Dark" ? "#fff":"#000"}}>Bedroom</h1>
+                <p style={{color:savedSettings.theme == "Dark" ? "#fff":"#000"}}>Dreamy furniture fit for royalty</p>
               </div>
             </div>
           </div>
@@ -206,8 +242,8 @@ const Home = () => {
                 onClick={productscreen}
               />
               <div className="collection-info">
-                <h1>Baby & Kids</h1>
-                <p>Let your little ones grow in comfort</p>
+                <h1 style={{color:savedSettings.theme == "Dark" ? "#fff":"#000"}}>Baby & Kids</h1>
+                <p style={{color:savedSettings.theme == "Dark" ? "#fff":"#000"}}>Let your little ones grow in comfort</p>
               </div>
             </div>
           </div>
@@ -219,8 +255,8 @@ const Home = () => {
                 onClick={productscreen}
               />
               <div className="collection-info">
-                <h1>Bathroom</h1>
-                <p>
+                <h1 style={{color:savedSettings.theme == "Dark" ? "#fff":"#000"}}>Bathroom</h1>
+                <p style={{color:savedSettings.theme == "Dark" ? "#fff":"#000"}}>
                   Bathtubs, sinks and more to create a unique oasis of
                   refreshment
                 </p>
@@ -235,8 +271,8 @@ const Home = () => {
                 onClick={productscreen}
               />
               <div className="collection-info">
-                <h1>Kitchen</h1>
-                <p>Warm, inviting, culinary hub of creativity</p>
+                <h1 style={{color:savedSettings.theme == "Dark" ? "#fff":"#000"}}>Kitchen</h1>
+                <p style={{color:savedSettings.theme == "Dark" ? "#fff":"#000"}}>Warm, inviting, culinary hub of creativity</p>
               </div>
             </div>
           </div>
@@ -248,42 +284,69 @@ const Home = () => {
                 onClick={productscreen}
               />
               <div className="collection-info">
-                <h1>Outdoor</h1>
-                <p>Be comfortable anywhere</p>
+                <h1 style={{color:savedSettings.theme == "Dark" ? "#fff":"#000"}}>Outdoor</h1>
+                <p style={{color:savedSettings.theme == "Dark" ? "#fff":"#000"}}>Be comfortable anywhere</p>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div className="video">
-        <video
-          src="../../Screens/mixkit-white-luxury-boutique-hotel-room-4046-hd-ready.mp4"
-          autoPlay={true}
-          loop
-          controls={false}
-        ></video>
-      </div>
+      
       <div className="float">
-        <div>
-          <img src="../../Screens/home-faq-ic.png" alt="" />
-        </div>
-        <div>
-          <img src="../../Screens/home-delivery-ic.png" alt="" />
-        </div>
-        <div>
-          <Link to="./locations">
-            <img src="../../Screens/home-track-ic.png" alt="" />
-          </Link>
-        </div>
-        <div>
-          <img src="../../Screens/home-loc-ic.png" alt="" />
-        </div>
-        <div>
-          <img src="../../Screens/home-hts-ic.png" alt="" />
-        </div>
+       
+<Swiper
+        effect={"coverflow"}
+        grabCursor={true}
+        centeredSlides={true}
+        slidesPerView={"auto"}
+        autoplay={{
+          delay: 3000, // Time in milliseconds (3 seconds per slide)
+          disableOnInteraction: false, // Keep autoplay running even after user interactions
+        }}
+        loop={true}
+        coverflowEffect={{
+          rotate: 50,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows: true,
+        }}
+        pagination={true}
+        modules={[EffectCoverflow, Pagination, Autoplay]}
+        className="mySwiper"
+      >
+        <SwiperSlide>
+          <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
+        </SwiperSlide>
+      </Swiper>
+
       </div>
       <div className="more-info">
-        <h3>Be the first to know about our best deals!</h3>
+        <h3 >Be the first to know about our best deals!</h3>
         <input type="checkbox" className="input2" />
         <label htmlFor="">All</label>
         <input type="checkbox" className="input2" />
@@ -304,21 +367,21 @@ const Home = () => {
         {/* <FaArrowRight className="email-icon"/> */}
       </div>
 
-      <div className="contact">
-        <div className="contact-form">
-          <div className="form">
-            <h1>Contact Us</h1>
-            <form action="">
-              <input type="text" placeholder="Name" required />
-              <input type="text" placeholder="Email" required />
-              <textarea name="message" id="" placeholder="Message"></textarea>
-              <button type="submit">SEND</button>
+      <div className="contact" style={{backgroundColor:savedSettings.theme == "Dark" ? "#000":"#fff", borderColor: savedSettings.theme === "Dark" ? "#fff" : "#000" }}>
+        <div className="contact-form" style={{backgroundColor:savedSettings.theme == "Dark" ? "#000":"#fff", borderColor:savedSettings == "Dark" ? "#fff" : "#000"}}>
+          <div className="form" style={{backgroundColor:savedSettings.theme == "Dark" ? "#000":"#fff", borderColor:savedSettings == "Dark" ? "#fff" : "#000",borderColor:savedSettings == "Dark" ? "#fff" : "#000"}}>
+            <h1 >Contact Us</h1>
+            <form action="" style={{backgroundColor:savedSettings.theme == "Dark" ? "#000":"#fff", borderColor: "#fff",}}>
+              <input type="text" placeholder="Name" required style={{backgroundColor:savedSettings.theme == "Dark" ? "#000":"#fff", borderColor:savedSettings.theme == "Dark" ? "#fff" : "#000"}}/>
+              <input type="text" placeholder="Email" required style={{backgroundColor:savedSettings.theme == "Dark" ? "#000":"#fff", borderColor:savedSettings.theme == "Dark" ? "#fff" : "#000"}}/>
+              <textarea name="message" id="" placeholder="Message" style={{backgroundColor:savedSettings.theme == "Dark" ? "#000":"#fff", borderColor:savedSettings.theme == "Dark" ? "#fff" : "#000"}}></textarea>
+              <button type="submit" style={{backgroundColor:savedSettings.theme == "Dark" ? "#fff":"#000", color:savedSettings.theme == "Dark" ? "#000" : "#fff"}}>SEND</button>
             </form>
           </div>
         </div>
-        <div className="contact-details">
-          <div className="details">
-            <h1>Our Information</h1>
+        <div className="contact-details" style={{backgroundColor:savedSettings.theme == "Dark" ? "#fff":"#000", color:savedSettings.theme == "Dark" ? "#000" : "#fff"}}>
+          <div className="details" style={{backgroundColor:savedSettings.theme == "Dark" ? "#fff":"#000", color:savedSettings.theme == "Dark" ? "#000" : "#fff", borderColor:savedSettings.theme == "Dark" ? "#000" : "#fff"}}>
+            <h1 style={{backgroundColor:savedSettings.theme == "Dark" ? "#fff":"#000", color:savedSettings.theme == "Dark" ? "#000" : "#fff"}}>Our Information</h1>
             <p>
               <FaEnvelope /> infostructureWarehouse@gmail.com
             </p>

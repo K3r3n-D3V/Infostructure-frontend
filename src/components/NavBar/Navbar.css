@@ -8,7 +8,7 @@
       align-items: center;
       background-color: #fff;
       width: 100%;
-      padding: 10px 20px;
+      /* padding: 10px 20px; */
       position: sticky;
       top: 0;
       z-index: 1000000;
@@ -44,7 +44,6 @@
 
     .icon {
       font-size: 60px;
-      color: black;
       cursor: pointer;
       border-radius: 20px;
     }
@@ -77,13 +76,13 @@
     }
 
     .search-results {
-      margin-top: 350px;
+      margin-top: 380px;
       position: absolute;
       background-color: white;
       width: 100%;
       border: 1px solid #fff;
       max-height: 300px;
-      overflow-y: auto;
+      overflow-x: auto;
       z-index: 100;
       border-radius: 20px;
       color: #000;
@@ -93,10 +92,10 @@
       display: flex;
       padding: 15px;
       border-bottom: 1px solid #066c74;
-      margin: auto;
+      /* margin: auto; */
       border: 1px solid #000;
       border-radius: 10px;
-      width: 70%;
+      width: 100%;
       z-index: 1000;
     }
 
@@ -119,7 +118,7 @@
       padding: 8px;
     }
 
-    /* .cart-tag{
+    .cart-tag{
       border: 1px solid #000;
       border-radius: 100%;
       background-color: #f00;
@@ -132,7 +131,8 @@
       font-size: 12px;
       font-weight: 600;
       text-decoration: none;
-    } */
+     z-index: 1000;
+    }
 
     .navbar-btn{
       padding: 5px;
@@ -146,4 +146,17 @@
   border-radius: 10px;
   border: none;
 
+}
+
+.navbar-icons{
+  /* border: 1px solid #000; */
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 13%;
+}
+
+.cart-icon{
+padding-top: 30px;
 }

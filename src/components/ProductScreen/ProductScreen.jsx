@@ -1,20 +1,25 @@
 import React, { useEffect, useState, useContext } from "react";
-// import { InfostructureContext } from "../../context/context";
 import { InfostructureContext } from "../../context/context";
 import { useNavigate } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa";
-import ProductNavbar from "./ProductNavbar";
 import "./ProductScreen.css";
+import Navbar from "../NavBar/Navbar";
 
 const baseURL = import.meta.env.VITE_EC2_PUBLIC_URL;
 
 const ProductScreen = () => {
+  const [isLightMode, setIsLightMode] = useState(true); // State to toggle themes
+  const {savedSettings,setSavedSettings} = useContext(InfostructureContext)
+
   const navigate = useNavigate();
 
   const [products, setProducts] = useState([]);
   const {setCartCount , cartCount} = useContext(InfostructureContext);
 
   useEffect(() => {
+    const cartItems = JSON.parse(sessionStorage.getItem("CartItems")) ?? [];
+    setCartCount(cartItems.length);
+
     fetch(`${baseURL}:3000/products`)
       .then((response) => response.json())
       .then((data) => {
@@ -23,6 +28,12 @@ const ProductScreen = () => {
       })
       .catch((error) => console.error("Error fetching products:", error));
   }, []);
+
+  if(!savedSettings.showPricing){
+    console.log("it is null ..now updating with data : ", sessionStorage.getItem("currentSettings"))
+    setSavedSettings(JSON.parse(sessionStorage.getItem("currentSettings")))
+  }
+
 
   const goHome = () => {
     navigate("/");
@@ -45,8 +56,8 @@ const ProductScreen = () => {
     }
   };
   return (
-    <div className="all">
-      <ProductNavbar />
+    <div className="all" style={{backgroundColor:savedSettings.theme == "Dark" ? "#000":"#fff"}}>
+     <Navbar/>
       <div className="heading">
         <FaArrowLeft className="arrow-icon" onClick={goHome} />
         <h1>Products</h1>
@@ -56,13 +67,13 @@ const ProductScreen = () => {
           <div className="product">
             {products.length > 0 ? (
               products.map((product,index) => (
-                <div key={product._id + index} className="image-item">
+                <div key={product._id + index} className="image-item" style={{backgroundColor:savedSettings.theme == "Dark" ? "#000":"#fff", color:savedSettings.theme == "Dark" ? "#fff": "#000"}}>
                   <img src={product.Image} alt={product.ProductName} />
-                  <div className="product-info">
+                  <div className="product-info" style={{backgroundColor:savedSettings.theme == "Dark" ? "#000":"#fff"}}>
                     <h3 className="product-name">{product.ProductName}</h3>
                     <p>Description</p>
-                    <p className="product-description">{product.Description}</p>
-                    <p className="product-price">${product.Price}</p>
+                    <p className="product-description" style={{backgroundColor:savedSettings.theme == "Dark" ? "#000":"#fff", color:savedSettings.theme == "Dark" ? "#fff" : "#000"}}>{product.Description}</p>
+                    <p className="product-price" style={{backgroundColor:savedSettings.theme == "Dark" ? "#000":"#fff", color:savedSettings.theme == "Dark" ? "#fff" : "#000"}}>${product.Price}</p>
                     <button
                       onClick={() => handleAddToCart(product)}
                       className="addToCartBtn"

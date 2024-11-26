@@ -1,0 +1,19 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color:#000;
+}
+body{
+    background-color: #000;
+}
+
+
+.goHome{
+    border: 1px solid #fff;
+    height: 50px;
+    width: 20%;
+}
+.goHome button{
+padding: 10px;
+}

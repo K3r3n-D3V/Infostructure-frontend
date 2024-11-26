@@ -11,6 +11,7 @@ import ProductScreen from "./components/ProductScreen/ProductScreen";
 import CheckOut from "./components/CheckOut/CheckOut";
 import Locations from "./components/Locations/Locations";
 import Cart from "./components/Cart/Cart";
+import Settings from "./components/Settings/Settings";
 
 function App() {
   const [signedIn, setSignedIn] = useState(() => {
@@ -26,8 +27,11 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/products/:id" component={ProductScreen} />
+        <Route path="/settings"
+          element={<Settings/>}
+         />
         <Route path="/locations" element={<Locations />} />
+        {/* <Route path="/settings" element={<Settings setSignedIn={setSignedIn} />} /> */}
         <Route
           path="/productscreen"
           element={<ProductScreen setSignedIn={setSignedIn} />}

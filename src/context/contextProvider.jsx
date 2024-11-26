@@ -5,6 +5,8 @@ const ContextProvider = ({ children }) => {
   const [cartCount, setCartCount] = useState(0);
   const [isLogged, setLoggedIn] = useState(false);
   const [user, setUser] = useState(null); // Initialize user as null if it holds user data
+  const [savedSettings, setSavedSettings] = useState({theme:"",showPricing:""});
+
 
   const contextValues = {
     cartCount,
@@ -12,6 +14,8 @@ const ContextProvider = ({ children }) => {
     isLogged,
     setLoggedIn,
     user,
+    savedSettings,
+    setSavedSettings,
     setUser,
     AuthenticatedStatus: (val) => {
       sessionStorage.setItem("AuthStatus", val);

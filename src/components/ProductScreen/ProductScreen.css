@@ -3,9 +3,9 @@
   flex-wrap: wrap;
   gap: 75px;
   justify-content: center;
-  background-image: url(../../../public/Screens/product.jpg);
+  /* background-image: url(../../../public/Screens/product.jpg);
   background-size: cover;
-  background-position: center;
+  background-position: center; */
 
 }
 
@@ -16,7 +16,7 @@ p {
 }
 
 .all {
-  background-image: url(../../../public/Screens/product.jpg);
+  /* background-image: url(../../../public/Screens/product.jpg); */
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -49,10 +49,12 @@ p {
   width: 300px;
   text-align: center;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #fff;
+
 }
 
 .image-item:hover{
-  border: 1px solid #fff;
+  border: 1px solid #066c74;
   cursor: pointer;
 }
 
