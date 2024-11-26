@@ -86,7 +86,7 @@ const Cart = () => {
         <div className="cart-info" style={{backgroundColor:savedSettings.theme == "Dark" ? "#000":"#fff", color:savedSettings.theme == "Dark" ? "#fff":"#000"}}>
           <div className="cart-info-headings" style={{backgroundColor:savedSettings.theme == "Dark" ? "#000":"#fff", color:savedSettings.theme == "Dark" ? "#fff":"#000"}}>
             <h1 style={{backgroundColor:savedSettings.theme == "Dark" ? "#000":"#fff", color:savedSettings.theme == "Dark" ? "#fff":"#000"}}>Shopping Cart</h1>
-            <h1 className="cart-info-h1" style={{backgroundColor:savedSettings.theme == "Dark" ? "#000":"#fff", color:savedSettings.theme == "Dark" ? "#fff":"#000"}}>
+            <h1 className={"cart-info-h1"} style={{backgroundColor:savedSettings.theme == "Dark" ? "#000":"#fff", color:savedSettings.theme == "Dark" ? "#fff":"#000"}}>
               Items:{" "}
               {items.reduce(
                 (sum, item) => sum + (Number(item.quantity) || 1),
