@@ -22,9 +22,9 @@ const Navbar = ({ signedIn, setSignedIn }) => {
   };
   
   const handlePlaceholderTheme = ()=>{
-    if(savedSettings.theme == "Dark"){
+    if(savedSettings?.theme == "Dark"){
       return "search-input search-input-dark"
-    }else if(savedSettings.theme == "light"){
+    }else if(savedSettings?.theme == "light"){
       return "search-input search-input-light"
     }else{
       return "search-input"
