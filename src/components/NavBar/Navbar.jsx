@@ -20,7 +20,16 @@ const Navbar = ({ signedIn, setSignedIn }) => {
     setSignedIn(false);
     sessionStorage.removeItem("AuthStatus");
   };
-
+  
+  const handlePlaceholderTheme = ()=>{
+    if(savedSettings.theme == "Dark"){
+      return "search-input search-input-dark"
+    }else if(savedSettings.theme == "light"){
+      return "search-input search-input-light"
+    }else{
+      return "search-input"
+    }
+  }
 
 
   const handleProceedToCart = () => {
@@ -127,7 +136,7 @@ const themeStyles = {
           <input
             type="text"
             placeholder="What are you looking for?"
-            className="search-input"
+            className={handlePlaceholderTheme()}
             value={searchTerm}
             onChange={handleSearch}
             style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", borderColor:savedSettings?.theme == "Dark" ? "#fff": "#000"}}
@@ -159,7 +168,7 @@ const themeStyles = {
               </li>
             ))
           ) : (
-            <h5>No matching products found</h5>
+            <h5>No matching products found</h5>   
           )}
         </ul>
       )}

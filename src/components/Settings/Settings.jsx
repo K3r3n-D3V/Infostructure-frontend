@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { useNavigate } from "react-router-dom";
 import { InfostructureContext } from '../../context/context';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 
 const Settings = () => {
@@ -34,7 +35,7 @@ const Settings = () => {
 
     return (
         <div style={{ padding: '20px', fontFamily: 'Arial, sans-serif',height: "100vh",backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", borderColor:savedSettings?.theme == "Dark" ? "#000":"#fff" }}>
-            <h1 style={{ color: '#fff', marginBottom: "20px", padding: "10px 30px", color:savedSettings?.theme == "Dark" ? "#fff":"#000",backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", borderColor:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>Settings</h1>
+            <h1 style={{marginBottom: "20px", padding: "10px 30px", color:savedSettings?.theme == "Dark" ? "#fff":"#000",backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", borderColor:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>Settings</h1>
 
             <div style={{padding: "10px 30px", backgroundColor:savedSettings?.theme == "Dark" ? "#333":"#ccc" }}>
                 {/* Theme Setting */}
@@ -127,7 +128,10 @@ const Settings = () => {
                     }}><strong>Font Size:</strong> {savedSettings.fontSize}</p>
                 </div>
             )}
-            <button className="goHome" onClick={handleHome} style={{backgroundColor:savedSettings?.theme == "Dark" ? "#fff":"#000", color:savedSettings?.theme == "Dark" ? "#000":"#fff"}}>Return to home</button>
+            <button onClick={handleHome} style={{backgroundColor:savedSettings?.theme == "Dark" ? "#fff":"#000", color:savedSettings?.theme == "Dark" ? "#000":"#fff",padding:"20px",display:"flex",gap:"3"}}>
+                <ArrowBackIcon/>
+                Return to home
+            </button>
         </div>
     );
 }

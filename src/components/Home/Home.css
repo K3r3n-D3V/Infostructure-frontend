@@ -400,7 +400,27 @@ svg {
   }
 
 
+/* For dark theme */
+input.contact-input-dark::placeholder,
+textarea.contact-input-dark::placeholder {
+  color: #066c74 !important;
+}
 
+input.contact-input-dark,
+textarea.contact-input-dark {
+  color: #fff;
+}
+
+/* For light theme */
+input.contact-input-light::placeholder,
+textarea.contact-input-light::placeholder {
+  color: #000 !important;
+}
+
+input.contact-input-light,
+textarea.contact-input-light {
+  color: #000;
+}
 
 
 

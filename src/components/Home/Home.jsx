@@ -38,6 +38,16 @@ const Home = () => {
     document.body.classList.toggle("dark-theme", !isLightMode); // Toggle class for dark theme
   };
 
+  const handlePlaceholderTheme = ()=>{
+    if(savedSettings?.theme?.toLowerCase() == "dark"){
+      return "contact-input-dark"
+    }else if(savedSettings?.theme?.toLowerCase() == "light"){
+      return "contact-input-light"
+    }else{
+      return "contact-input"
+    }
+  }
+
 
   const navigate = useNavigate();
   const productscreen = () => {
@@ -369,12 +379,12 @@ const Home = () => {
 
       <div className="contact" style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", borderColor: savedSettings?.theme === "Dark" ? "#fff" : "#000" }}>
         <div className="contact-form" style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", borderColor:savedSettings == "Dark" ? "#fff" : "#000"}}>
-          <div className="form" style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", borderColor:savedSettings == "Dark" ? "#fff" : "#000",borderColor:savedSettings == "Dark" ? "#fff" : "#000"}}>
+          <div className="form" style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff",borderColor:savedSettings == "Dark" ? "#fff" : "#000"}}>
             <h1 >Contact Us</h1>
             <form action="" style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", borderColor: "#fff",}}>
-              <input type="text" placeholder="Name" required style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", borderColor:savedSettings?.theme == "Dark" ? "#fff" : "#000"}}/>
-              <input type="text" placeholder="Email" required style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", borderColor:savedSettings?.theme == "Dark" ? "#fff" : "#000"}}/>
-              <textarea name="message" id="" placeholder="Message" style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", borderColor:savedSettings?.theme == "Dark" ? "#fff" : "#000"}}></textarea>
+              <input className={handlePlaceholderTheme()} type="text" placeholder="Name" required style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", borderColor:savedSettings?.theme == "Dark" ? "#fff" : "#000",padding:"10px",border:savedSettings?.theme == "Dark" ? "1px solid #fff":"1px solid #000", borderRadius:"10px"}}/>
+              <input className={handlePlaceholderTheme()} type="text" placeholder="Email" required style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", borderColor:savedSettings?.theme == "Dark" ? "#fff" : "#000",padding:"10px",border:savedSettings?.theme == "Dark" ? "1px solid #fff":"1px solid #000", borderRadius:"10px"}}/>
+              <textarea className={handlePlaceholderTheme()} name="message" id="" placeholder="Message" style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", borderColor:savedSettings?.theme == "Dark" ? "#fff" : "#000",padding:"10px",border:savedSettings?.theme == "Dark" ? "1px solid #fff":"1px solid #000", borderRadius:"10px"}}></textarea>
               <button type="submit" style={{backgroundColor:savedSettings?.theme == "Dark" ? "#fff":"#000", color:savedSettings?.theme == "Dark" ? "#000" : "#fff"}}>SEND</button>
             </form>
           </div>
