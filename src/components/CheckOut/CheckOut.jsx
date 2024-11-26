@@ -195,36 +195,36 @@ function CheckOut() {
     };
     
   return (
-    <div className="every" style={{backgroundColor:savedSettings.theme == "Dark" ? "#000":"#fff", color:savedSettings.theme == "Dark" ? "#fff":"#000"}}>
+    <div className="every" style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>
       <Navbar />
-      <div className="checkout-container" style={{backgroundColor:savedSettings.theme == "Dark" ? "#000":"#fff", color:savedSettings.theme == "Dark" ? "#fff":"#000"}}>
-         <h2 className="checkout-heading" style={{backgroundColor:savedSettings.theme == "Dark" ? "#000":"#fff", color:savedSettings.theme == "Dark" ? "#fff":"#000"}}>Ready to pay?</h2>
-      <form className="checkout-form" style={{backgroundColor:savedSettings.theme == "Dark" ? "#000":"#fff", color:savedSettings.theme == "Dark" ? "#fff":"#000"}} onSubmit={handleSubmit}>
-        {successMessage && <p className="success-message" style={{backgroundColor:savedSettings.theme == "Dark" ? "#000":"#fff", color:savedSettings.theme == "Dark" ? "#fff":"#000"}}>{successMessage}</p>}
-        {errorMessage && <p className="error-message" style={{backgroundColor:savedSettings.theme == "Dark" ? "#000":"#fff", color:savedSettings.theme == "Dark" ? "#fff":"#000"}}>{errorMessage}</p>}
+      <div className="checkout-container" style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>
+         <h2 className="checkout-heading" style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>Ready to pay?</h2>
+      <form className="checkout-form" style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", color:savedSettings?.theme == "Dark" ? "#fff":"#000"}} onSubmit={handleSubmit}>
+        {successMessage && <p className="success-message" style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>{successMessage}</p>}
+        {errorMessage && <p className="error-message" style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>{errorMessage}</p>}
 
         {/* Step 1: User Info */}
         {currentStep === 1 && (
           <div>
-            <label className="checkout-label" style={{backgroundColor:savedSettings.theme == "Dark" ? "#000":"#fff", color:savedSettings.theme == "Dark" ? "#fff":"#000"}}>First Name:</label>
+            <label className="checkout-label" style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>First Name:</label>
             <input
               className="checkout-input"
               type="text"
               name="firstName"
               value={formData.firstName}
               onChange={handleInputChange}
-              style={{backgroundColor:savedSettings.theme == "Dark" ? "#000":"#fff", color:savedSettings.theme == "Dark" ? "#fff":"#000"}}
+              style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}
             />
             {errors.firstName && <p className="error-text">{errors.firstName}</p>}
             
-            <label className="checkout-label" style={{backgroundColor:savedSettings.theme == "Dark" ? "#000":"#fff", color:savedSettings.theme == "Dark" ? "#fff":"#000"}}>Last Name:</label>
+            <label className="checkout-label" style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>Last Name:</label>
             <input
               className="checkout-input"
               type="text"
               name="lastName"
               value={formData.lastName}
               onChange={handleInputChange}
-              style={{backgroundColor:savedSettings.theme == "Dark" ? "#000":"#fff", color:savedSettings.theme == "Dark" ? "#fff":"#000"}}
+              style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}
             />
             {errors.lastName && <p className="error-text">{errors.lastName}</p>}
           </div>
@@ -233,47 +233,47 @@ function CheckOut() {
         {/* Step 2: Address Info */}
         {currentStep === 2 && (
           <div>
-            <label className="checkout-label" style={{backgroundColor:savedSettings.theme == "Dark" ? "#000":"#fff", color:savedSettings.theme == "Dark" ? "#fff":"#000"}}>Address:</label>
+            <label className="checkout-label" style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>Address:</label>
             <input
               className="checkout-input"
               type="text"
               name="address"
               value={formData.address}
               onChange={handleInputChange}
-              style={{backgroundColor:savedSettings.theme == "Dark" ? "#000":"#fff", color:savedSettings.theme == "Dark" ? "#fff":"#000"}}
+              style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}
             />
             {errors.address && <p className="error-text">{errors.address}</p>}
             
-            <label className="checkout-label" style={{backgroundColor:savedSettings.theme == "Dark" ? "#000":"#fff", color:savedSettings.theme == "Dark" ? "#fff":"#000"}}>City:</label>
+            <label className="checkout-label" style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>City:</label>
             <input
               className="checkout-input"
               type="text"
               name="city"
               value={formData.city}
               onChange={handleInputChange}
-              style={{backgroundColor:savedSettings.theme == "Dark" ? "#000":"#fff", color:savedSettings.theme == "Dark" ? "#fff":"#000"}}
+              style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}
             />
             {errors.city && <p className="error-text">{errors.city}</p>}
             
-            <label className="checkout-label" style={{backgroundColor:savedSettings.theme == "Dark" ? "#000":"#fff", color:savedSettings.theme == "Dark" ? "#fff":"#000"}}>State:</label>
+            <label className="checkout-label" style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>State:</label>
             <input
               className="checkout-input"
               type="text"
               name="state"
               value={formData.state}
               onChange={handleInputChange}
-              style={{backgroundColor:savedSettings.theme == "Dark" ? "#000":"#fff", color:savedSettings.theme == "Dark" ? "#fff":"#000"}}
+              style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}
             />
             {errors.state && <p className="error-text">{errors.state}</p>}
             
-            <label className="checkout-label" style={{backgroundColor:savedSettings.theme == "Dark" ? "#000":"#fff", color:savedSettings.theme == "Dark" ? "#fff":"#000"}}>Zip Code:</label>
+            <label className="checkout-label" style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>Zip Code:</label>
             <input
               className="checkout-input"
               type="text"
               name="zip"
               value={formData.zip}
               onChange={handleInputChange}
-              style={{backgroundColor:savedSettings.theme == "Dark" ? "#000":"#fff", color:savedSettings.theme == "Dark" ? "#fff":"#000"}}
+              style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}
             />
             {errors.zip && <p className="error-text">{errors.zip}</p>}
           </div>
@@ -282,7 +282,7 @@ function CheckOut() {
         {/* Step 3: Payment Method Info */}
         {currentStep === 3 && (
           <div>
-            <label className="checkout-label" style={{backgroundColor:savedSettings.theme == "Dark" ? "#000":"#fff", color:savedSettings.theme == "Dark" ? "#fff":"#000"}}>Payment Method:</label>
+            <label className="checkout-label" style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>Payment Method:</label>
             <select
               className="checkout-select"
               name="paymentMethod"
@@ -301,8 +301,8 @@ function CheckOut() {
 
         {/* Step 4: Review Order */}
         {currentStep === 4 && (
-          <div className="order" style={{backgroundColor:savedSettings.theme == "Dark" ? "#000":"#fff", color:savedSettings.theme == "Dark" ? "#fff":"#000"}}>
-      style={{color:savedSettings.theme == "Dark" ? "#fff":"#000"}}
+          <div className="order" style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>
+      style={{color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}
       <h3 >Order Summary</h3>
             <ul>
               {items.map((item, index) => (
@@ -320,14 +320,14 @@ function CheckOut() {
 <div className="buttons" >
   {currentStep > 1 && (
     <button className="prev-button" type="button" onClick={handlePreviousStep}
-    style={{backgroundColor:savedSettings.theme == "Dark" ? "#066c74":"#fff", color:savedSettings.theme == "Dark" ? "#fff":"#000"}}
+    style={{backgroundColor:savedSettings?.theme == "Dark" ? "#066c74":"#fff", color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}
     >
       Previous
     </button>
   )}
   {currentStep <= 3 ? (
     <button className="next-button" type="button" onClick={handleNextStep}
-    style={{backgroundColor:savedSettings.theme == "Dark" ? "#066c74":"#fff", color:savedSettings.theme == "Dark" ? "#fff":"#000"}}
+    style={{backgroundColor:savedSettings?.theme == "Dark" ? "#066c74":"#fff", color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}
     >
       Next
     </button>
@@ -337,7 +337,7 @@ function CheckOut() {
       type="button" // Prevent default submission
       disabled={loading}
       onClick={handlePlaceOrder} // Trigger the order placement
-      style={{backgroundColor:savedSettings.theme == "Dark" ? "#066c74":"#fff", color:savedSettings.theme == "Dark" ? "#fff":"#000"}}
+      style={{backgroundColor:savedSettings?.theme == "Dark" ? "#066c74":"#fff", color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}
     >
       {loading ? "Processing..." : "Place Order"}
     </button>
@@ -363,8 +363,8 @@ function CheckOut() {
 
         
     
-        <div className="return-cart" style={{backgroundColor:savedSettings.theme == "Dark" ? "#000":"#fff", color:savedSettings.theme == "Dark" ? "#fff":"#000"}}>
-          <button className="return-cart-button" type="button" onClick={handleReturnToCart} style={{backgroundColor:savedSettings.theme == "Dark" ? "#066c74":"#fff", color:savedSettings.theme == "Dark" ? "#fff":"#000"}}>
+        <div className="return-cart" style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>
+          <button className="return-cart-button" type="button" onClick={handleReturnToCart} style={{backgroundColor:savedSettings?.theme == "Dark" ? "#066c74":"#fff", color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>
             Return to Cart
           </button>
         </div>

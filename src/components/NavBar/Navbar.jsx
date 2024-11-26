@@ -91,15 +91,15 @@ const Navbar = ({ signedIn, setSignedIn }) => {
 
 const themeStyles = {
   input: {
-    color: savedSettings.theme === "Dark" ? "#fff" : "#000", // Input text color
+    color: savedSettings?.theme === "Dark" ? "#fff" : "#000", // Input text color
   },
   placeholder: {
-    color: savedSettings.theme === "Dark" ? "#fff" : "#777", // Placeholder color
+    color: savedSettings?.theme === "Dark" ? "#fff" : "#777", // Placeholder color
   },
 };
   return (
 
-    <nav className="navbar" style={{backgroundColor:savedSettings.theme == "Dark" ? "#000":"#fff"}}>
+    <nav className="navbar" style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff"}}>
       <style>
         {`
           .input-placeholder::placeholder{
@@ -123,25 +123,25 @@ const themeStyles = {
 
       <div className="navbar-search">
         <div className="search-container">
-          <FaSearch className="search-icon" style={{color:savedSettings.theme == "Dark" ? "#fff":"#000"}} />
+          <FaSearch className="search-icon" style={{color:savedSettings?.theme == "Dark" ? "#fff":"#000"}} />
           <input
             type="text"
             placeholder="What are you looking for?"
             className="search-input"
             value={searchTerm}
             onChange={handleSearch}
-            style={{backgroundColor:savedSettings.theme == "Dark" ? "#000":"#fff", borderColor:savedSettings.theme == "Dark" ? "#fff": "#000"}}
+            style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", borderColor:savedSettings?.theme == "Dark" ? "#fff": "#000"}}
           />
         </div>
       </div>
 
       {/* Dropdown/Search Result Section */}
       {searchTerm && (
-        <ul className="search-results" style={{color:savedSettings.theme == "Dark" ? "#fff":"#000"}}>
+        <ul className="search-results" style={{color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>
           {filteredProducts.length > 0 ? (
             filteredProducts.map((product) => (
               <li
-              style={{color:savedSettings.theme == "Dark" ? "#fff":"#000", backgroundColor:savedSettings.theme == "Dark" ? "#000": "#fff"}}
+              style={{color:savedSettings?.theme == "Dark" ? "#fff":"#000", backgroundColor:savedSettings?.theme == "Dark" ? "#000": "#fff"}}
                 key={product._id}
                 className="search-item"
                 onClick={() => navigate(`/productscreen/${product._id}`)}
@@ -151,10 +151,10 @@ const themeStyles = {
                   alt={product.ProductName}
                   style={{ width: "50px", height: "50px" }}
                 />
-                <div className="product-info" style={{color:savedSettings.theme == "Dark" ? "#fff":"#000"}}>
-                  <p style={{color:savedSettings.theme == "Dark" ? "#fff":"#000"}}>{product.ProductName}</p>
-                  <p style={{color:savedSettings.theme == "Dark" ? "#fff":"#000"}}>Price: ${product.Price}</p>
-                  <p style={{color:savedSettings.theme == "Dark" ? "#fff":"#000"}}>{product.Description}</p>
+                <div className="product-info" style={{color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>
+                  <p style={{color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>{product.ProductName}</p>
+                  <p style={{color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>Price: ${product.Price}</p>
+                  <p style={{color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>{product.Description}</p>
                 </div>
               </li>
             ))
@@ -166,24 +166,24 @@ const themeStyles = {
 
       <div className="navbar-icons">
         <Link to="/">
-          <FaHome size={30} color={savedSettings.theme == "Dark" ? "#fff":"#000"}/>
+          <FaHome size={30} color={savedSettings?.theme == "Dark" ? "#fff":"#000"}/>
         </Link>
         <Link to="/profile">
-          <FaUser size={30} color={savedSettings.theme == "Dark" ? "#fff":"#000"} />
+          <FaUser size={30} color={savedSettings?.theme == "Dark" ? "#fff":"#000"} />
         </Link>
         {/* <i className="cart-icon">
-          <FaShoppingCart  size={30} color={savedSettings.theme == "Dark" ? "#fff":"#000"} onClick={handleProceedToCart} />
+          <FaShoppingCart  size={30} color={savedSettings?.theme == "Dark" ? "#fff":"#000"} onClick={handleProceedToCart} />
         </i> */}
 
         <Link to="/cart" className="cart-icon">
-          <FaShoppingCart size={30} color={savedSettings.theme == "Dark" ? "#fff":"#000"} className="product-navbar-icon" />
+          <FaShoppingCart size={30} color={savedSettings?.theme == "Dark" ? "#fff":"#000"} className="product-navbar-icon" />
         <div className="cart-tag">{cartCount}</div>
         </Link>
 
 
 
      {/* <p style={{color:"red"}}>
-         {savedSettings.theme}
+         {savedSettings?.theme}
          </p> */}
    
       </div>

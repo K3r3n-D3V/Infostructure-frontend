@@ -33,13 +33,13 @@ const Settings = () => {
     };
 
     return (
-        <div style={{ padding: '20px', fontFamily: 'Arial, sans-serif',height: "100vh",backgroundColor:savedSettings.theme == "Dark" ? "#000":"#fff", borderColor:savedSettings.theme == "Dark" ? "#000":"#fff" }}>
-            <h1 style={{ color: '#fff', marginBottom: "20px", padding: "10px 30px", color:savedSettings.theme == "Dark" ? "#fff":"#000",backgroundColor:savedSettings.theme == "Dark" ? "#000":"#fff", borderColor:savedSettings.theme == "Dark" ? "#fff":"#000"}}>Settings</h1>
+        <div style={{ padding: '20px', fontFamily: 'Arial, sans-serif',height: "100vh",backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", borderColor:savedSettings?.theme == "Dark" ? "#000":"#fff" }}>
+            <h1 style={{ color: '#fff', marginBottom: "20px", padding: "10px 30px", color:savedSettings?.theme == "Dark" ? "#fff":"#000",backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", borderColor:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>Settings</h1>
 
-            <div style={{padding: "10px 30px", backgroundColor:savedSettings.theme == "Dark" ? "#333":"#ccc" }}>
+            <div style={{padding: "10px 30px", backgroundColor:savedSettings?.theme == "Dark" ? "#333":"#ccc" }}>
                 {/* Theme Setting */}
                 <div style={{ marginBottom: '15px', display: 'flex', alignItems: 'center' }}>
-                    <label style={{ fontWeight: 'bold', marginRight: '10px', fontSize: '18px', color:savedSettings.theme === "Dark" ? "#fff" : "#000" }}>Theme:</label>
+                    <label style={{ fontWeight: 'bold', marginRight: '10px', fontSize: '18px', color:savedSettings?.theme === "Dark" ? "#fff" : "#000" }}>Theme:</label>
                     <select
                         value={theme}
                         onChange={(e) => setTheme(e.target.value)}
@@ -51,8 +51,8 @@ const Settings = () => {
                 </div>
 
                 {/* Show Pricing Setting */}
-                <div style={{ marginBottom: '15px', display: 'flex', alignItems: 'center', backgroundColor:savedSettings.theme == "Dark" ? "#333":"#ccc" }}>
-                    <label style={{ fontWeight: 'bold', marginRight: '10px', fontSize: '18px', color:savedSettings.theme === "Dark" ? "#fff" : "#000" }}>Show Pricing:</label>
+                <div style={{ marginBottom: '15px', display: 'flex', alignItems: 'center', backgroundColor:savedSettings?.theme == "Dark" ? "#333":"#ccc" }}>
+                    <label style={{ fontWeight: 'bold', marginRight: '10px', fontSize: '18px', color:savedSettings?.theme === "Dark" ? "#fff" : "#000" }}>Show Pricing:</label>
                     <input
                         type="checkbox"
                         checked={showPricing}
@@ -66,7 +66,7 @@ const Settings = () => {
 
                 {/* Notifications Setting */}
                 <div style={{ marginBottom: '15px', display: 'flex', alignItems: 'center' }}>
-                    <label style={{ fontWeight: 'bold', marginRight: '10px', fontSize: '18px', color:savedSettings.theme === "Dark" ? "#fff" : "#000" }}>Notifications:</label>
+                    <label style={{ fontWeight: 'bold', marginRight: '10px', fontSize: '18px', color:savedSettings?.theme === "Dark" ? "#fff" : "#000" }}>Notifications:</label>
                     <input
                         type="checkbox"
                         checked={notifications}
@@ -80,7 +80,7 @@ const Settings = () => {
 
                 {/* Font Size Setting */}
                 <div style={{ marginBottom: '15px', display: 'flex', alignItems: 'center' }}>
-                    <label style={{ fontWeight: 'bold', marginRight: '10px',fontSize: '18px', color:savedSettings.theme === "Dark" ? "#fff" : "#000" }}>Font Size:</label>
+                    <label style={{ fontWeight: 'bold', marginRight: '10px',fontSize: '18px', color:savedSettings?.theme === "Dark" ? "#fff" : "#000" }}>Font Size:</label>
                     <select
                         value={fontSize}
                         onChange={(e) => setFontSize(e.target.value)}
@@ -97,14 +97,14 @@ const Settings = () => {
                     onClick={handleSaveSettings}
                     style={{
                         padding: '10px 20px',
-                        borderColor:savedSettings.theme === "Dark" ? '#fff' : "#000",
+                        borderColor:savedSettings?.theme === "Dark" ? '#fff' : "#000",
                         borderRadius: '4px',
                         cursor: 'pointer',
                         fontWeight: 'bold',
                         fontSize: '16px',
                         marginTop: '10px',
-                        color:savedSettings.theme === "Dark" ? "#000" : "#fff",
-                        backgroundColor:savedSettings.theme == "Dark" ? "#fff":"#000"
+                        color:savedSettings?.theme === "Dark" ? "#000" : "#fff",
+                        backgroundColor:savedSettings?.theme == "Dark" ? "#fff":"#000"
                     }}
                 >
                     Save Settings
@@ -113,21 +113,21 @@ const Settings = () => {
 
             {/* Display Saved Settings */}
             {savedSettings && (
-                <div style={{ marginTop: '20px', padding: '10px 20px',color:savedSettings.theme === "Dark" ? "#fff" : "#000",
-                    backgroundColor:savedSettings.theme == "Dark" ? "#333":"#ddd" }}>
-                    <h2 style={{color:savedSettings.theme === "Dark" ? "#fff" : "#000",
+                <div style={{ marginTop: '20px', padding: '10px 20px',color:savedSettings?.theme === "Dark" ? "#fff" : "#000",
+                    backgroundColor:savedSettings?.theme == "Dark" ? "#333":"#ddd" }}>
+                    <h2 style={{color:savedSettings?.theme === "Dark" ? "#fff" : "#000",
                     }}>Saved Settings</h2>
-                    <p style={{color:savedSettings.theme === "Dark" ? "#fff" : "#000",
-                    }}><strong>Theme:</strong> {savedSettings.theme}</p>
-                    <p style={{color:savedSettings.theme === "Dark" ? "#fff" : "#000",
+                    <p style={{color:savedSettings?.theme === "Dark" ? "#fff" : "#000",
+                    }}><strong>Theme:</strong> {savedSettings?.theme}</p>
+                    <p style={{color:savedSettings?.theme === "Dark" ? "#fff" : "#000",
                     }}><strong>Show Pricing:</strong> {savedSettings.showPricing ? 'Enabled' : 'Disabled'}</p>
-                    <p style={{color:savedSettings.theme === "Dark" ? "#fff" : "#000",
+                    <p style={{color:savedSettings?.theme === "Dark" ? "#fff" : "#000",
                     }}><strong>Notifications:</strong> {savedSettings.notifications ? 'On' : 'Off'}</p>
-                    <p style={{color:savedSettings.theme === "Dark" ? "#fff" : "#000",
+                    <p style={{color:savedSettings?.theme === "Dark" ? "#fff" : "#000",
                     }}><strong>Font Size:</strong> {savedSettings.fontSize}</p>
                 </div>
             )}
-            <button className="goHome" onClick={handleHome} style={{backgroundColor:savedSettings.theme == "Dark" ? "#fff":"#000", color:savedSettings.theme == "Dark" ? "#000":"#fff"}}>Return to home</button>
+            <button className="goHome" onClick={handleHome} style={{backgroundColor:savedSettings?.theme == "Dark" ? "#fff":"#000", color:savedSettings?.theme == "Dark" ? "#000":"#fff"}}>Return to home</button>
         </div>
     );
 }

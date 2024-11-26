@@ -46,26 +46,26 @@ const Home = () => {
 
   const themeStyles = {
     input: {
-      color: savedSettings.theme === "Dark" ? "#fff" : "#000", // Input text color
+      color: savedSettings?.theme === "Dark" ? "#fff" : "#000", // Input text color
     },
     placeholder: {
-      color: savedSettings.theme === "Dark" ? "#fff" : "#777", // Placeholder color
+      color: savedSettings?.theme === "Dark" ? "#fff" : "#777", // Placeholder color
     },
   };
   return (
-    <div className="home" style={{backgroundColor:savedSettings.theme == "Dark" ? "#000":"#fff", color:savedSettings.theme == "Dark" ? "#fff":"#000"}}>
+    <div className="home" style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>
       <Navbar />
-      <div className="box" style={{backgroundColor:savedSettings.theme == "Dark" ? "#000":"#fff", color:savedSettings.theme == "Dark" ? "#fff":"#000"}}>
-        <div className="box2" style={{backgroundColor:savedSettings.theme == "Dark" ? "#000":"#fff", color:savedSettings.theme == "Dark" ? "#fff":"#000"}}>
-          <h1 style={{backgroundColor:savedSettings.theme == "Dark" ? "#000":"#fff", color:savedSettings.theme == "Dark" ? "#fff":"#000"}}>
+      <div className="box" style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>
+        <div className="box2" style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>
+          <h1 style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>
             Home sweet <span className="span">stylish</span> home.
           </h1>
-          <p className="designers" style={{backgroundColor:savedSettings.theme == "Dark" ? "#000":"#fff", color:savedSettings.theme == "Dark" ? "#fff":"#000"}}>
+          <p className="designers" style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>
             A warm, welcoming sanctuary filled with personal touches and
             peaceful comfort
           </p>
           <Link to="/productscreen">
-          <button type="button" className="shop-collection" style={{backgroundColor:savedSettings.theme == "Dark" ? "#fff":"#000", color:savedSettings.theme == "Dark" ? "#000":"#fff"}}>SHOP COLLECTION</button>
+          <button type="button" className="shop-collection" style={{backgroundColor:savedSettings?.theme == "Dark" ? "#fff":"#000", color:savedSettings?.theme == "Dark" ? "#000":"#fff"}}>SHOP COLLECTION</button>
           </Link>
         </div>
         <div className="box2">
@@ -74,7 +74,7 @@ const Home = () => {
       </div>
 
       <div className="box3 designers">
-        <h1 style={{color:savedSettings.theme == "Dark" ? "#fff":"#000"}}>Explore our Curated Collections By Designers...</h1>
+        <h1 style={{color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>Explore our Curated Collections By Designers...</h1>
         <div className="collection" >
           <div className="collection-item">
             <div className="collection-pic">
@@ -84,7 +84,7 @@ const Home = () => {
                 onClick={productscreen}
               />
               <div className="collection-info designer" >
-                <h1 style={{backgroundColor:savedSettings.theme == "Dark" ? "#000":"#fff", color:savedSettings.theme == "Dark" ? "#fff":"#000"}}>Sophia LeLor</h1>
+                <h1 style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>Sophia LeLor</h1>
               </div>
             </div>
           </div>
@@ -96,7 +96,7 @@ const Home = () => {
                 onClick={productscreen}
               />
               <div className="collection-info designer">
-                <h1 style={{backgroundColor:savedSettings.theme == "Dark" ? "#000":"#fff", color:savedSettings.theme == "Dark" ? "#fff":"#000"}}>Marinette Dupeng-Cheng</h1>
+                <h1 style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>Marinette Dupeng-Cheng</h1>
               </div>
             </div>
           </div>
@@ -108,7 +108,7 @@ const Home = () => {
                 onClick={productscreen}
               />
               <div className="collection-info designer">
-                <h1 style={{backgroundColor:savedSettings.theme == "Dark" ? "#000":"#fff", color:savedSettings.theme == "Dark" ? "#fff":"#000"}}>Agnes Levine</h1>
+                <h1 style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>Agnes Levine</h1>
                 {/* <p>Eye-catching accents to complete your look</p> */}
               </div>
             </div>
@@ -121,7 +121,7 @@ const Home = () => {
                 onClick={productscreen}
               />
               <div className="collection-info designer">
-                <h1 style={{color:savedSettings.theme == "Dark" ? "#fff":"#000"}}>Patrick Dior</h1>
+                <h1 style={{color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>Patrick Dior</h1>
                 {/* <p>Dreamy furniture fit for royalty</p> */}
               </div>
             </div>
@@ -136,7 +136,7 @@ const Home = () => {
                 onClick={productscreen}
               />
               <div className="collection-info designer">
-                <h1 style={{color:savedSettings.theme == "Dark" ? "#fff":"#000"}}>Annabelle Ford</h1>
+                <h1 style={{color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>Annabelle Ford</h1>
               </div>
             </div>
           </div>
@@ -148,7 +148,7 @@ const Home = () => {
                 onClick={productscreen}
               />
               <div className="collection-info designer">
-                <h1 style={{color:savedSettings.theme == "Dark" ? "#fff":"#000"}}>Lucrazia Santos</h1>
+                <h1 style={{color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>Lucrazia Santos</h1>
                 {/* <p>Bathtubs, sinks and more to create a unique oasis of refreshment</p> */}
               </div>
             </div>
@@ -157,7 +157,7 @@ const Home = () => {
             <div className="collection-pic">
               <img src="../../Screens/pic7.jpg" alt="" />
               <div className="collection-info designer">
-                <h1 style={{color:savedSettings.theme == "Dark" ? "#fff":"#000"}}>Boketsu Peace</h1>
+                <h1 style={{color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>Boketsu Peace</h1>
                 {/* <p>Warm, inviting, culinary hub of creativity</p> */}
               </div>
             </div>
@@ -170,7 +170,7 @@ const Home = () => {
                 onClick={productscreen}
               />
               <div className="collection-info designer">
-                <h1 style={{color:savedSettings.theme == "Dark" ? "#fff":"#000"}}>Emma Bulore</h1>
+                <h1 style={{color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>Emma Bulore</h1>
                 {/* <p>kjgvkyh</p> */}
               </div>
             </div>
@@ -178,7 +178,7 @@ const Home = () => {
         </div>
       </div>
       <div className="box3">
-        <h1 style={{color:savedSettings.theme == "Dark" ? "#fff":"#000"}}>Shop By Categories</h1>
+        <h1 style={{color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>Shop By Categories</h1>
         <div className="collection">
           <div className="collection-item">
             <div className="collection-pic">
@@ -188,8 +188,8 @@ const Home = () => {
                 onClick={productscreen}
               />
               <div className="collection-info">
-                <h1 style={{color:savedSettings.theme == "Dark" ? "#fff":"#000"}}>Living Room</h1>
-                <p style={{color:savedSettings.theme == "Dark" ? "#fff":"#000"}}>Sophisticated sofas, rugs and more</p>
+                <h1 style={{color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>Living Room</h1>
+                <p style={{color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>Sophisticated sofas, rugs and more</p>
               </div>
             </div>
           </div>
@@ -201,8 +201,8 @@ const Home = () => {
                 onClick={productscreen}
               />
               <div className="collection-info">
-                <h1 style={{color:savedSettings.theme == "Dark" ? "#fff":"#000"}}>Dining Room</h1>
-                <p style={{color:savedSettings.theme == "Dark" ? "#fff":"#000"}}>Tables, Chairs and more to help you set a city-chic scene</p>
+                <h1 style={{color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>Dining Room</h1>
+                <p style={{color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>Tables, Chairs and more to help you set a city-chic scene</p>
               </div>
             </div>
           </div>
@@ -214,8 +214,8 @@ const Home = () => {
                 onClick={productscreen}
               />
               <div className="collection-info">
-                <h1 style={{color:savedSettings.theme == "Dark" ? "#fff":"#000"}}>Decor & more</h1>
-                <p style={{color:savedSettings.theme == "Dark" ? "#fff":"#000"}}>Eye-catching accents to complete your look</p>
+                <h1 style={{color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>Decor & more</h1>
+                <p style={{color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>Eye-catching accents to complete your look</p>
               </div>
             </div>
           </div>
@@ -227,8 +227,8 @@ const Home = () => {
                 onClick={productscreen}
               />
               <div className="collection-info">
-                <h1 style={{color:savedSettings.theme == "Dark" ? "#fff":"#000"}}>Bedroom</h1>
-                <p style={{color:savedSettings.theme == "Dark" ? "#fff":"#000"}}>Dreamy furniture fit for royalty</p>
+                <h1 style={{color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>Bedroom</h1>
+                <p style={{color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>Dreamy furniture fit for royalty</p>
               </div>
             </div>
           </div>
@@ -242,8 +242,8 @@ const Home = () => {
                 onClick={productscreen}
               />
               <div className="collection-info">
-                <h1 style={{color:savedSettings.theme == "Dark" ? "#fff":"#000"}}>Baby & Kids</h1>
-                <p style={{color:savedSettings.theme == "Dark" ? "#fff":"#000"}}>Let your little ones grow in comfort</p>
+                <h1 style={{color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>Baby & Kids</h1>
+                <p style={{color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>Let your little ones grow in comfort</p>
               </div>
             </div>
           </div>
@@ -255,8 +255,8 @@ const Home = () => {
                 onClick={productscreen}
               />
               <div className="collection-info">
-                <h1 style={{color:savedSettings.theme == "Dark" ? "#fff":"#000"}}>Bathroom</h1>
-                <p style={{color:savedSettings.theme == "Dark" ? "#fff":"#000"}}>
+                <h1 style={{color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>Bathroom</h1>
+                <p style={{color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>
                   Bathtubs, sinks and more to create a unique oasis of
                   refreshment
                 </p>
@@ -271,8 +271,8 @@ const Home = () => {
                 onClick={productscreen}
               />
               <div className="collection-info">
-                <h1 style={{color:savedSettings.theme == "Dark" ? "#fff":"#000"}}>Kitchen</h1>
-                <p style={{color:savedSettings.theme == "Dark" ? "#fff":"#000"}}>Warm, inviting, culinary hub of creativity</p>
+                <h1 style={{color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>Kitchen</h1>
+                <p style={{color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>Warm, inviting, culinary hub of creativity</p>
               </div>
             </div>
           </div>
@@ -284,8 +284,8 @@ const Home = () => {
                 onClick={productscreen}
               />
               <div className="collection-info">
-                <h1 style={{color:savedSettings.theme == "Dark" ? "#fff":"#000"}}>Outdoor</h1>
-                <p style={{color:savedSettings.theme == "Dark" ? "#fff":"#000"}}>Be comfortable anywhere</p>
+                <h1 style={{color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>Outdoor</h1>
+                <p style={{color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>Be comfortable anywhere</p>
               </div>
             </div>
           </div>
@@ -367,21 +367,21 @@ const Home = () => {
         {/* <FaArrowRight className="email-icon"/> */}
       </div>
 
-      <div className="contact" style={{backgroundColor:savedSettings.theme == "Dark" ? "#000":"#fff", borderColor: savedSettings.theme === "Dark" ? "#fff" : "#000" }}>
-        <div className="contact-form" style={{backgroundColor:savedSettings.theme == "Dark" ? "#000":"#fff", borderColor:savedSettings == "Dark" ? "#fff" : "#000"}}>
-          <div className="form" style={{backgroundColor:savedSettings.theme == "Dark" ? "#000":"#fff", borderColor:savedSettings == "Dark" ? "#fff" : "#000",borderColor:savedSettings == "Dark" ? "#fff" : "#000"}}>
+      <div className="contact" style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", borderColor: savedSettings?.theme === "Dark" ? "#fff" : "#000" }}>
+        <div className="contact-form" style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", borderColor:savedSettings == "Dark" ? "#fff" : "#000"}}>
+          <div className="form" style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", borderColor:savedSettings == "Dark" ? "#fff" : "#000",borderColor:savedSettings == "Dark" ? "#fff" : "#000"}}>
             <h1 >Contact Us</h1>
-            <form action="" style={{backgroundColor:savedSettings.theme == "Dark" ? "#000":"#fff", borderColor: "#fff",}}>
-              <input type="text" placeholder="Name" required style={{backgroundColor:savedSettings.theme == "Dark" ? "#000":"#fff", borderColor:savedSettings.theme == "Dark" ? "#fff" : "#000"}}/>
-              <input type="text" placeholder="Email" required style={{backgroundColor:savedSettings.theme == "Dark" ? "#000":"#fff", borderColor:savedSettings.theme == "Dark" ? "#fff" : "#000"}}/>
-              <textarea name="message" id="" placeholder="Message" style={{backgroundColor:savedSettings.theme == "Dark" ? "#000":"#fff", borderColor:savedSettings.theme == "Dark" ? "#fff" : "#000"}}></textarea>
-              <button type="submit" style={{backgroundColor:savedSettings.theme == "Dark" ? "#fff":"#000", color:savedSettings.theme == "Dark" ? "#000" : "#fff"}}>SEND</button>
+            <form action="" style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", borderColor: "#fff",}}>
+              <input type="text" placeholder="Name" required style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", borderColor:savedSettings?.theme == "Dark" ? "#fff" : "#000"}}/>
+              <input type="text" placeholder="Email" required style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", borderColor:savedSettings?.theme == "Dark" ? "#fff" : "#000"}}/>
+              <textarea name="message" id="" placeholder="Message" style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", borderColor:savedSettings?.theme == "Dark" ? "#fff" : "#000"}}></textarea>
+              <button type="submit" style={{backgroundColor:savedSettings?.theme == "Dark" ? "#fff":"#000", color:savedSettings?.theme == "Dark" ? "#000" : "#fff"}}>SEND</button>
             </form>
           </div>
         </div>
-        <div className="contact-details" style={{backgroundColor:savedSettings.theme == "Dark" ? "#fff":"#000", color:savedSettings.theme == "Dark" ? "#000" : "#fff"}}>
-          <div className="details" style={{backgroundColor:savedSettings.theme == "Dark" ? "#fff":"#000", color:savedSettings.theme == "Dark" ? "#000" : "#fff", borderColor:savedSettings.theme == "Dark" ? "#000" : "#fff"}}>
-            <h1 style={{backgroundColor:savedSettings.theme == "Dark" ? "#fff":"#000", color:savedSettings.theme == "Dark" ? "#000" : "#fff"}}>Our Information</h1>
+        <div className="contact-details" style={{backgroundColor:savedSettings?.theme == "Dark" ? "#fff":"#000", color:savedSettings?.theme == "Dark" ? "#000" : "#fff"}}>
+          <div className="details" style={{backgroundColor:savedSettings?.theme == "Dark" ? "#fff":"#000", color:savedSettings?.theme == "Dark" ? "#000" : "#fff", borderColor:savedSettings?.theme == "Dark" ? "#000" : "#fff"}}>
+            <h1 style={{backgroundColor:savedSettings?.theme == "Dark" ? "#fff":"#000", color:savedSettings?.theme == "Dark" ? "#000" : "#fff"}}>Our Information</h1>
             <p>
               <FaEnvelope /> infostructureWarehouse@gmail.com
             </p>

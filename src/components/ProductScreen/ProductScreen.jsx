@@ -56,7 +56,7 @@ const ProductScreen = () => {
     }
   };
   return (
-    <div className="all" style={{backgroundColor:savedSettings.theme == "Dark" ? "#000":"#fff"}}>
+    <div className="all" style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff"}}>
      <Navbar/>
       <div className="heading">
         <FaArrowLeft className="arrow-icon" onClick={goHome} />
@@ -67,13 +67,13 @@ const ProductScreen = () => {
           <div className="product">
             {products.length > 0 ? (
               products.map((product,index) => (
-                <div key={product._id + index} className="image-item" style={{backgroundColor:savedSettings.theme == "Dark" ? "#000":"#fff", color:savedSettings.theme == "Dark" ? "#fff": "#000"}}>
+                <div key={product._id + index} className="image-item" style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", color:savedSettings?.theme == "Dark" ? "#fff": "#000"}}>
                   <img src={product.Image} alt={product.ProductName} />
-                  <div className="product-info" style={{backgroundColor:savedSettings.theme == "Dark" ? "#000":"#fff"}}>
+                  <div className="product-info" style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff"}}>
                     <h3 className="product-name">{product.ProductName}</h3>
                     <p>Description</p>
-                    <p className="product-description" style={{backgroundColor:savedSettings.theme == "Dark" ? "#000":"#fff", color:savedSettings.theme == "Dark" ? "#fff" : "#000"}}>{product.Description}</p>
-                    <p className="product-price" style={{backgroundColor:savedSettings.theme == "Dark" ? "#000":"#fff", color:savedSettings.theme == "Dark" ? "#fff" : "#000"}}>${product.Price}</p>
+                    <p className="product-description" style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", color:savedSettings?.theme == "Dark" ? "#fff" : "#000"}}>{product.Description}</p>
+                    <p className="product-price" style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", color:savedSettings?.theme == "Dark" ? "#fff" : "#000"}}>${product.Price}</p>
                     <button
                       onClick={() => handleAddToCart(product)}
                       className="addToCartBtn"
