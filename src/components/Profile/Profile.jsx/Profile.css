@@ -1,3 +1,10 @@
+body{
+    background-color: #111;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 .profile {
     background-image: url(../../../../public/Screens/profile-pic-bcg.jpg);
     background-position: center;

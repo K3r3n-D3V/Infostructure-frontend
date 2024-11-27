@@ -85,7 +85,7 @@ const Cart = () => {
       <div className="cart" style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>
         <div className="cart-info" style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>
           <div className="cart-info-headings" style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>
-            <h1 style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>Shopping Cart</h1>
+            <h1 style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", color:savedSettings?.theme == "Dark" ? "#066c74":"#066c74"}}>Shopping Cart</h1>
             <h1 className={"cart-info-h1"} style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>
               Items:{" "}
               {items.reduce(
@@ -116,11 +116,11 @@ const Cart = () => {
                     +
                   </button>
                 </div>
-                <p style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>${product.Price}</p>
+                <p style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>R{product.Price}</p>
                 <button
                   className="remove-btn"
                   onClick={() => handleRemoveItem(index)}
-                  style={{backgroundColor:savedSettings?.theme == "Dark" ? "red":"#fff", color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>
+                  style={{backgroundColor:savedSettings?.theme == "Dark" ? "red":"red", color:savedSettings?.theme == "Dark" ? "#fff":"#fff"}}>
                   x
                 </button>
               </div>
@@ -133,7 +133,7 @@ const Cart = () => {
           </div>
         </div>
         <div className="cart-info2" style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>
-          <h1 style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>Order Summary</h1>
+          <h1 style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", color:savedSettings?.theme == "Dark" ? "#066c74":"#066c74"}}>Order Summary</h1>
           <div className="cart-info2-item" style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>
             <p style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>
               Total Items:{" "}
@@ -142,24 +142,24 @@ const Cart = () => {
                 0
               )}
             </p>
-            <p style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>${totalSum.toFixed(2)}</p>
+            <p style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", color:savedSettings?.theme == "Dark" ? "#066c74":"#066c74"}}>R{totalSum.toFixed(2)}</p>
           </div>
           <div className="shipping-info" style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>
-            <h4 tyle={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>SHIPPING</h4>
+            <h4 tyle={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", color:savedSettings?.theme == "Dark" ? "#fff":"#066c74"}}>SHIPPING</h4>
             <form>
               <select name="deliveryMethod" onChange={handleShippingChange} style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>
                 <option value="Standard Delivery" tyle={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>
-                  Standard Delivery - $10
+                  Standard Delivery - R10
                 </option>
-                <option value="Express Delivery" style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>Express Delivery - $25</option>
-                <option value="Free Delivery" style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>Free Delivery - $0</option>
+                <option value="Express Delivery" style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>Express Delivery - R25</option>
+                <option value="Free Delivery" style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>Free Delivery - R0</option>
               </select>
             </form>
           </div>
           <hr />
           <div className="cart-info2-item" style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>
             <p style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>Total Amount (with shipping): </p>
-            <p style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>${totalAmountWithShipping.toFixed(2)}</p>
+            <p style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", color:savedSettings?.theme == "Dark" ? "#066c74":"#066c74"}}>R{totalAmountWithShipping.toFixed(2)}</p>
           </div>
           <div className="checkout-btn" style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>
             <Link to="/checkout">

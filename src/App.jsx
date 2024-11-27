@@ -26,26 +26,26 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Routes>
+      {/* <Routes>
         <Route path="/settings"
           element={<Settings/>}
          />
         <Route path="/locations" element={<Locations />} />
         {/* <Route path="/settings" element={<Settings setSignedIn={setSignedIn} />} /> */}
-        <Route
+        {/* <Route
           path="/productscreen"
           element={<ProductScreen setSignedIn={setSignedIn} />}
         />
         <Route path="/signup" element={<Signup setSignedIn={setSignedIn} />} />
         <Route
           path="/login"
-          element={<Login setSignedIn={setSignedIn} />} // Allow access to login
-        />
-        <Route path="/" element={<Home />} />
+          element={<Login setSignedIn={setSignedIn} />} // Allow access to login */}
+        {/* // />
+        // <Route path="/" element={<Home />} />
 
-        <Route path="/profile" element={<Profile signedIn={signedIn} />} />
+        // <Route path="/profile" element={<Profile signedIn={signedIn} />} /> */}
         {/* Protected routes */}
-        <Route element={<ProtectedRoutes signedIn={signedIn} />}></Route>
+        {/* <Route element={<ProtectedRoutes signedIn={signedIn} />}></Route>
         <Route path="/cart" element={<Cart />} />
         <Route
           path="/checkout"
@@ -54,11 +54,32 @@ function App() {
         <Route
           path="/bankdetails"
           element={<BankDetails setSignedIn={setSignedIn} />}
-        />
+        /> */}
 
         {/* Redirect all unknown routes to home */}
-        <Route path="*" element={<Navigate to="/" />} />
-      </Routes>
+        {/* <Route path="*" element={<Navigate to="/" />} />
+      </Routes> */} 
+
+<Routes>
+  {/* Public Routes */}
+  <Route path="/" element={<Home />} />
+  <Route path="/signup" element={<Signup setSignedIn={setSignedIn} />} />
+  <Route path="/login" element={<Login setSignedIn={setSignedIn} />} />
+  <Route path="/locations" element={<Locations />} />
+  <Route path="/productscreen" element={<ProductScreen setSignedIn={setSignedIn} />} />
+
+  {/* Protected Routes */}
+  <Route element={<ProtectedRoutes signedIn={signedIn} />}>
+  <Route path="/settings" element={<Settings />} />
+    <Route path="/cart" element={<Cart />} />
+    <Route path="/checkout" element={<CheckOut setSignedIn={setSignedIn} />} />
+    <Route path="/bankdetails" element={<BankDetails setSignedIn={setSignedIn} />} />
+    <Route path="/profile" element={<Profile signedIn={signedIn} />} />
+  </Route>
+
+  {/* Redirect all unknown routes to home */}
+  <Route path="*" element={<Navigate to="/" />} />
+</Routes>
     </BrowserRouter>
   );
 }

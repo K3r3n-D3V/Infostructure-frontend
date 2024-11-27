@@ -18,6 +18,7 @@ import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 import { Autoplay } from "swiper/modules";
+import { FiArrowRightCircle } from "react-icons/fi";
 
 
 
@@ -84,9 +85,16 @@ const Home = () => {
       </div>
 
       <div className="box3 designers">
-        <h1 style={{color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>Explore our Curated Collections By Designers...</h1>
+        <h1 style={{color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>Explore our <span className="span">Curated Collections</span> By <span className="span">Designers...</span></h1>
         <div className="collection" >
-          <div className="collection-item">
+        <div 
+  className="collection-item" 
+  style={{
+    boxShadow: savedSettings?.theme === "Dark" 
+      ? "0 0 15px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.3)" 
+      : "0 0 15px rgba(0, 0, 0, 0.1), 0 0 30px rgba(0, 0, 0, 0.05)",
+  }}
+>
             <div className="collection-pic">
               <img
                 src="../../Screens/pic1.jpg"
@@ -188,7 +196,7 @@ const Home = () => {
         </div>
       </div>
       <div className="box3">
-        <h1 style={{color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>Shop By Categories</h1>
+        <h1 style={{color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>Shop By <span className="span">Categories</span></h1>
         <div className="collection">
           <div className="collection-item">
             <div className="collection-pic">
@@ -372,20 +380,20 @@ const Home = () => {
           type="email"
           className="email-input search-input"
           placeholder="Email Address"
+          
         />
-        {/* <AiOutlineArrowRight className="email-icon"/> */}
-        {/* <FaArrowRight className="email-icon"/> */}
+        <FiArrowRightCircle className="rightArrow"/>
       </div>
 
       <div className="contact" style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", borderColor: savedSettings?.theme === "Dark" ? "#fff" : "#000" }}>
         <div className="contact-form" style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", borderColor:savedSettings == "Dark" ? "#fff" : "#000"}}>
           <div className="form" style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff",borderColor:savedSettings == "Dark" ? "#fff" : "#000"}}>
-            <h1 >Contact Us</h1>
+            <h1 style={{color:savedSettings == "Dark" ? "#fff" : "#000"}}>Contact Us</h1>
             <form action="" style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", borderColor: "#fff",}}>
               <input className={handlePlaceholderTheme()} type="text" placeholder="Name" required style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", borderColor:savedSettings?.theme == "Dark" ? "#fff" : "#000",padding:"10px",border:savedSettings?.theme == "Dark" ? "1px solid #fff":"1px solid #000", borderRadius:"10px"}}/>
               <input className={handlePlaceholderTheme()} type="text" placeholder="Email" required style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", borderColor:savedSettings?.theme == "Dark" ? "#fff" : "#000",padding:"10px",border:savedSettings?.theme == "Dark" ? "1px solid #fff":"1px solid #000", borderRadius:"10px"}}/>
               <textarea className={handlePlaceholderTheme()} name="message" id="" placeholder="Message" style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", borderColor:savedSettings?.theme == "Dark" ? "#fff" : "#000",padding:"10px",border:savedSettings?.theme == "Dark" ? "1px solid #fff":"1px solid #000", borderRadius:"10px"}}></textarea>
-              <button type="submit" style={{backgroundColor:savedSettings?.theme == "Dark" ? "#fff":"#000", color:savedSettings?.theme == "Dark" ? "#000" : "#fff"}}>SEND</button>
+              <button type="submit" style={{backgroundColor:savedSettings?.theme == "Dark" ? "#fff":"#000", color:savedSettings?.theme == "Dark" ? "#000" : "#fff"}}>SEND </button>
             </form>
           </div>
         </div>

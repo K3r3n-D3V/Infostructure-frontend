@@ -1,3 +1,10 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: cursive;
+}
+
 .every {
   background-image: url(../../../public/Screens/checkout.jpg);
   background-position: center;
@@ -14,8 +21,7 @@
   margin: 30px auto; 
   width: 700px;
   padding: 50px;
-  border: 1px solid #000;
-  font-family: Arial, sans-serif;
+  /* border: 1px solid #000; */
   background-color: #f9f9f9;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -92,21 +98,33 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  border: none;
 }
 
+.submit-button button:hover{
+  background-color: rgba(12, 147, 157, 0.9) !important;
+  cursor: pointer !important;
+}
 .prev-button {
-  background-color: #f1f1f1;
-  color: #333;
+  background-color: #066c74 !important;
+  color: #fff !important; 
 }
 
 .prev-button:hover{
-  color: #000;
-
-background-color: #ccc;}
+  color: #fff;
+  transition: 0.5s;
+  background-color: rgba(12, 147, 157, 0.9) !important;
+  cursor: pointer !important;
+}
 
 .next-button {
-  background-color: #066c74;
-  color: #fff;
+  background-color: #066c74 !important;
+  color: #fff !important;
+}
+
+.next-button:hover{
+  background-color: rgba(12, 147, 157, 0.9) !important;
+  cursor: pointer !important;
 }
 
 .submit-button {
@@ -118,6 +136,9 @@ background-color: #ccc;}
 .next-button:hover,
 .submit-button:hover {
   opacity: 0.9;
+  transition: 0.5s;
+  cursor: pointer !important;
+
 }
 
 .prev-button:disabled,
@@ -148,17 +169,19 @@ background-color: #ccc;}
 }
 
 .remove-item-button {
-  background-color: #ff4d4d;
-  color: #fff;
+  background-color: #ff4d4d !important;
+  color: #fff !important;
   padding: 5px 10px;
   border: none;
   border-radius: 5px;
-  cursor: pointer;
   font-size: 12px;
 }
 
 .remove-item-button:hover {
   background-color: #e04343;
+  transition: 0.5s;
+  cursor: pointer !important;
+
 }
 
 /* Return to Cart Button */
@@ -169,18 +192,21 @@ background-color: #ccc;}
 
 .return-cart-button {
   padding: 12px 20px;
-  background-color: rgba(6, 108, 116, 0.5);
-  border: 1px solid #ccc;
+  background-color: #066c74 !important;
+  /* border: 1px solid #ccc; */
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
-  color: #000;
   transition: background-color 0.3s;
+  border: none;
 }
 
 .return-cart-button:hover {
-  background-color: #066c74;
+  background-color: rgba(12, 147, 157, 0.9)  !important;
   color: white;
+  transition: 0.5s;
+  cursor: pointer !important;
+
 }
 
 .return-cart-button:focus {
@@ -236,6 +262,8 @@ background-color: #ccc;}
 
 .popup-close-button:hover {
   background: #0f7c84;
+  transition: 0.5s;
+  cursor: pointer !important;
 }
 
 @keyframes fadeIn {
@@ -247,4 +275,44 @@ background-color: #ccc;}
     opacity: 1;
     transform: translate(-50%, -50%);
   }
+}
+
+
+/* For dark theme */
+input.contact-input-dark::placeholder,
+textarea.contact-input-dark::placeholder {
+  color: #fff !important;
+}
+
+input.contact-input-dark,
+textarea.contact-input-dark {
+  color: #fff;
+}
+
+
+input.contact-input-dark button{
+ background-color: #fff;
+ 
+}
+
+input.contact-input-dark button:hover{
+    background-color: #066c74;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* For light theme */
+input.contact-input-light::placeholder,
+textarea.contact-input-light::placeholder {
+  color: #000 !important;
+}
+
+input.contact-input-light,
+textarea.contact-input-light {
+  color: #000;
+}
+
+.popup{
+  border: 1px solid #fff;
+ top: 350px;
 }

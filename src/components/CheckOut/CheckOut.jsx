@@ -200,7 +200,7 @@ function CheckOut() {
       <div className="checkout-container" style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>
          <h2 className="checkout-heading" style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>Ready to pay?</h2>
       <form className="checkout-form" style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", color:savedSettings?.theme == "Dark" ? "#fff":"#000"}} onSubmit={handleSubmit}>
-        {successMessage && <p className="success-message" style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>{successMessage}</p>}
+        {/* {successMessage && <p className="success-message" style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>{successMessage}</p>} */}
         {errorMessage && <p className="error-message" style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>{errorMessage}</p>}
 
         {/* Step 1: User Info */}
@@ -302,8 +302,8 @@ function CheckOut() {
         {/* Step 4: Review Order */}
         {currentStep === 4 && (
           <div className="order" style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>
-      style={{color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}
-      <h3 >Order Summary</h3>
+      
+      <h3 style={{color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>Order Summary</h3>
             <ul>
               {items.map((item, index) => (
                 <li key={index}>
@@ -312,8 +312,8 @@ function CheckOut() {
                 </li>
               ))}
             </ul>
-            <p>Total Price: R{items.reduce((total, item) => total + parseFloat(item.Price), 0).toFixed(2)}</p>
-            <p>Delivery Method: {deliveryMethod}</p>
+            <p style={{color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>Total Price: R{items.reduce((total, item) => total + parseFloat(item.Price), 0).toFixed(2)}</p>
+            <p style={{color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>Delivery Method: {deliveryMethod}</p>
           </div>
         )}
 
@@ -337,7 +337,7 @@ function CheckOut() {
       type="button" // Prevent default submission
       disabled={loading}
       onClick={handlePlaceOrder} // Trigger the order placement
-      style={{backgroundColor:savedSettings?.theme == "Dark" ? "#066c74":"#fff", color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}
+      style={{backgroundColor:savedSettings?.theme == "Dark" ? "#066c74":"#066c74", color:savedSettings?.theme == "Dark" ? "#fff":"#fff"}}
     >
       {loading ? "Processing..." : "Place Order"}
     </button>
@@ -345,8 +345,8 @@ function CheckOut() {
 
   {/* Popup for Order Success */}
   {successMessage && (
-    <div className="popup">
-      <div className="popup-content">
+    <div className="popup" style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", borderColor:savedSettings?.theme == "Dark" ? "#fff" : "#000"}}>
+      <div className="popup-content" style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", color:savedSettings?.theme == "Dark" ? "#fff":"#fff", borderColor:savedSettings?.theme == "Dark" ? "#fff" : "#000"}}>
         <span className="popup-checkmark">✔</span>
         <p className="popup-message">Order placed successfully!</p>
         <button

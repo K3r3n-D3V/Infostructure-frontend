@@ -14,8 +14,8 @@ const Settings = () => {
   
   const navigate = useNavigate();
 
-    const handleHome = () => {
-        navigate("/")
+    const handleSettings = () => {
+        navigate("/profile")
     }
     const handleSaveSettings = () => {
         // Save all settings in a single object
@@ -128,9 +128,9 @@ const Settings = () => {
                     }}><strong>Font Size:</strong> {savedSettings.fontSize}</p>
                 </div>
             )}
-            <button onClick={handleHome} style={{backgroundColor:savedSettings?.theme == "Dark" ? "#fff":"#000", color:savedSettings?.theme == "Dark" ? "#000":"#fff",padding:"20px",display:"flex",gap:"3"}}>
+            <button onClick={handleSettings} style={{backgroundColor:savedSettings?.theme == "Dark" ? "#fff":"#000", color:savedSettings?.theme == "Dark" ? "#000":"#fff",padding:"20px",display:"flex",gap:"3"}}>
                 <ArrowBackIcon/>
-                Return to home
+                Back
             </button>
         </div>
     );

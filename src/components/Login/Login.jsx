@@ -94,10 +94,10 @@ function Login({ setSignedIn }) {
           </div>
           <button type="submit">LOG IN</button>
         </form>
-        <p>
-          Do not have an account?{" "}
+        <p className="sign-up">
+          Do not have an account?{" "} 
           <a href="" onClick={handleSignUpClick}>
-            Sign Up
+             Sign Up
           </a>
         </p>
       </div>

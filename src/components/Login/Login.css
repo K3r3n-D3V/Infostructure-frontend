@@ -65,11 +65,20 @@ p {
 }
 
 .login-box button:hover {
-  background-color: #fff;
-  color: #000;
+  background-color: #066c74;
+  color: #fff;
+  transition: 0.5s;
 }
 
 .login-box hr {
   border: 1px solid #fff;
 
+}
+
+.sign-up{
+  /* border: 1px solid #fff; */
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

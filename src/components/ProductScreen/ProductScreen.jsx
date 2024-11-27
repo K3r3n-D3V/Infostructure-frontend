@@ -29,10 +29,10 @@ const ProductScreen = () => {
       .catch((error) => console.error("Error fetching products:", error));
   }, []);
 
-  if(!savedSettings.showPricing){
-    console.log("it is null ..now updating with data : ", sessionStorage.getItem("currentSettings"))
-    setSavedSettings(JSON.parse(sessionStorage.getItem("currentSettings")))
-  }
+  // if(!savedSettings.theme){
+  //   console.log("it is null ..now updating with data : ", sessionStorage.getItem("currentSettings"))
+  //   setSavedSettings(JSON.parse(sessionStorage.getItem("currentSettings")))
+  // }
 
 
   const goHome = () => {
@@ -56,11 +56,11 @@ const ProductScreen = () => {
     }
   };
   return (
-    <div className="all" style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff"}}>
+    <div className="all" style={{backgroundColor:savedSettings?.theme == "Dark" ? "#111":"#fff"}}>
      <Navbar/>
       <div className="heading">
-        <FaArrowLeft className="arrow-icon" onClick={goHome} />
-        <h1>Products</h1>
+        <FaArrowLeft className="arrow-icon" onClick={goHome} style={{color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}/>
+        <h1 style={{color:savedSettings?.theme == "Dark" ? "#fff":"#000"}}>Products</h1>
       </div>
       <div className="image-gallery">
         <div className="product-list">
@@ -71,15 +71,18 @@ const ProductScreen = () => {
                   <img src={product.Image} alt={product.ProductName} />
                   <div className="product-info" style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff"}}>
                     <h3 className="product-name">{product.ProductName}</h3>
-                    <p>Description</p>
+                    <p>Description: </p>
                     <p className="product-description" style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", color:savedSettings?.theme == "Dark" ? "#fff" : "#000"}}>{product.Description}</p>
-                    <p className="product-price" style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", color:savedSettings?.theme == "Dark" ? "#fff" : "#000"}}>${product.Price}</p>
+                    <p className="product-price" style={{backgroundColor:savedSettings?.theme == "Dark" ? "#000":"#fff", color:savedSettings?.theme == "Dark" ? "#fff" : "#000"}}>R{product.Price}</p>
+                    <div className="addToCartBtn">
+
                     <button
                       onClick={() => handleAddToCart(product)}
-                      className="addToCartBtn"
+                      
                     >
                       Add To Cart
                     </button>
+                    </div>
                   </div>
                 </div>
               ))

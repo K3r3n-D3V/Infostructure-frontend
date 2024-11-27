@@ -6,7 +6,7 @@ import { InfostructureContext } from "../../context/context";
 
 const baseURL = import.meta.env.VITE_EC2_PUBLIC_URL;
 
-const Navbar = ({ signedIn, setSignedIn }) => {
+const Navbar = () => {
   const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState("");
   const [products, setProducts] = useState([]);
@@ -45,7 +45,7 @@ const Navbar = ({ signedIn, setSignedIn }) => {
     setIsLightMode(!isLightMode);
     document.body.classList.toggle("light-theme", isLightMode); // Toggle class for light theme
     document.body.classList.toggle("dark-theme", !isLightMode); // Toggle class for dark theme
-  };
+  }; 
 
   // Fetch products from the backend
   useEffect(() => {
@@ -64,10 +64,10 @@ const Navbar = ({ signedIn, setSignedIn }) => {
     };
     fetchProducts();
 
-    if(!savedSettings.showPricing){
-      console.log("it is null ..now updating with data : ", sessionStorage.getItem("currentSettings"))
-      setSavedSettings(JSON.parse(sessionStorage.getItem("currentSettings")))
-    }
+    // if(!savedSettings.showPricing){
+    //   console.log("it is null ..now updating with data : ", sessionStorage.getItem("currentSettings"))
+    //   setSavedSettings(JSON.parse(sessionStorage.getItem("currentSettings")))
+    // }
 
 
     console.log("saved settings in navbar: ",savedSettings);

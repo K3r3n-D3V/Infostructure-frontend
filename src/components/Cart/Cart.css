@@ -27,20 +27,24 @@
   }
 
   .cart {
-    /* border: 1px solid #000; */
+    /* border: 1px solid #fff; */
     height: 100vh;
     width: 100%;
     display: flex;
+    /* box-shadow: 0 0 15px rgba(255, 255, 255, 0.2), 0 0 30px rgba(255, 255, 255, 0.1); */
+
   }
 
   .cart-info {
-    border: 1px solid #000;
+    /* border: 1px solid #fff; */
     width: 70%;
     height: 100%;
     overflow-y: auto;
     overflow-x: hidden;
     /* padding: 10px; */
     background-color: #f9f9f9;
+    /* box-shadow: 0 0 15px rgba(255, 255, 255, 0.2), 0 0 30px rgba(255, 255, 255, 0.1); */
+
   }
 
   .cart-heading {
@@ -48,6 +52,9 @@
     align-items: center;
     justify-content: start;
     color: #000;
+    /* border: 1px solid #fff; */
+    width: 100%;
+    
   }
 
   .cart-heading p {
@@ -67,10 +74,12 @@
     justify-content: space-between;
     /* padding: 5px 0; */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1),
-      0 6px 20px rgba(0, 0, 0, 0.1);
+      0 6px 20px rgba(0, 0, 0, 0.3);
     transition: box-shadow 0.3s ease-in-out;
     padding: 20px 0;
     /* border: 1px solid #000; */
+    /* box-shadow: 0 0 15px rgba(255, 255, 255, 0.2), 0 0 30px rgba(255, 255, 255, 0.20); */
+
   }
 
   .cart-item:hover {
@@ -78,6 +87,8 @@
       0 12px 40px rgba(0, 0, 0, 0.15);
     cursor: pointer;
     background-color: rgba(6, 108, 116, 0.2);
+    transition: 0.5s;
+
   }
 
   .cart-item p,
@@ -88,6 +99,7 @@
     color: #000;
     margin: 0;
     /* padding: 0 10px; */
+    
   }
 
   .counter {
@@ -108,6 +120,7 @@
 
   .counter button:hover {
     background-color: #ccc;
+    transition: 0.5s;
     cursor: pointer;
   }
 
@@ -125,7 +138,9 @@
   }
 
   .remove-btn:hover {
-    background-color: #d32f2f;
+    background-color: #d32f2f !important;
+    transition: 0.5s;
+    
   }
 
 
@@ -204,33 +219,45 @@
   }
 
   .shipping-info2 button:hover {
-    color: #fff;
-    background-color: #d32f2f;
+    color: #fff !important;
+    background-color: #d32f2f !important;
+    transition: 0.5s;
+
   }
 
   .cart-info2 hr {
-    border: 1px solid #1d402b;
+    border: 2px solid #066c74;
     width: 90%;
     margin-left: 30px;
   }
 
   .checkout-btn {
     /* border: 1px solid #000; */
-    height: 50px;
+    height: 80px;
     width: 100%;
     margin-top: 20px;
+    /* border: 1px solid #fff; */
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
   }
 
   .checkout-btn button {
-    height: 100%;
+    background-color: #066c74  !important;
+    height: 80%;
     width: 100%;
-    background-color: rgba(6, 108, 116, 0.5);
+    border: none;
+    color: #fff !important;
+    padding: 20px;
+    border-radius: 10px;
   }
-
+  
   .checkout-btn button:hover {
-    background-color: #066c74;
+    background-color: rgba(10, 136, 145, 0.9) !important;
     cursor: pointer;
-    color: #fff;
+    color: #fff !important;
+    transition: 0.5s;
+
   }
 
   .return {
@@ -242,7 +269,7 @@
   .return button {
     height: 100%;
     width: 20%;
-    background-color: rgba(6, 108, 116, 0.5);
+    background-color: #066c74 !important;
     border-radius: 10px;
     color: #fff;
     border: none;
@@ -250,6 +277,9 @@
   }
 
   .return button:hover{
-    background-color: #066c74;
-    color: #fff;
+    background-color: rgba(12, 147, 157, 0.9) !important;
+
+    color: #fff !important;
+    transition: 0.5s;
+
   }
